@@ -1,0 +1,5 @@
+This file is used to learn how to resolve a conflict with the subversion software configuration tool.
+
+Please change the value of x and commit.
+
+@x = 1
