@@ -1,0 +1,29 @@
+Group Members:
+Newsha Amirihormozaki
+Sigrid Berkebile
+James Rehak
+
+Goal:
+Create an interactive education website, like Udacity or Codecademy. As we are interested in Astronomy, we have preliminarily picked our solar system (sun, planets, asteroids, etc.) as the subject for our learning website. Our targeted audience consists of high school students. The site will be designed to have a game-like feel with lessons consisting of short tutorials followed by quizzes and interactive tasks, such as correctly identifying planets from a picture or arranging moons of a planet in the correct order. This will re-enforce the study material and challenge the student to apply his/her new knowledge. Each lesson will be about a different aspect of the solar system. The lessons will be designed to have increasing levels of difficulty and the student will receive medals or badges for each successfully finished lesson.
+
+Major Classes:
+Student
+Course
+Lesson (multiple lessons per course)
+Quiz
+
+Use Cases:
+User login. The web application will require students to have login credentials for the purpose of course tracking progress.
+Students shall have a user profile (personal data, achievements)
+Students shall be able to enroll in courses.
+Students shall be able to take lessons.
+Students shall complete quizzes to progress through lessons.
+Students shall be able to track course progress.
+
+Additional Features:
+Students will need an account to be able to track their progress
+Accounts will be authenticated with usernames and passwords
+
+Platform: Desktop computers (Linux, Windows)
+
+
