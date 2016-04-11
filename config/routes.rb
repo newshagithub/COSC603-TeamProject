@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'main/index'
   get 'users/overview'
+  get 'lectures/do_lecture'
 
   devise_for :users, controllers: { registrations: 'devise/registrations'}
   resources :lectures

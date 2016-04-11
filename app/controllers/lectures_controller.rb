@@ -1,6 +1,11 @@
 class LecturesController < ApplicationController
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
 
+  # GET /lectures Student View
+  def do_lecture
+    render :text=>"hi"
+  end
+
   # GET /lectures
   # GET /lectures.json
   def index
