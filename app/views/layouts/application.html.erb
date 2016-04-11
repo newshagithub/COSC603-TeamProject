@@ -53,7 +53,7 @@
                 <%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary' %>
             <% else %>
                 <li><%= link_to "You are not signed in.", '#' %></li>
-            <li><%= link_to "Login", new_user_session_path, :class => 'btn btn-xs btn-danger'%> </li>
+            <li><%= link_to "Login", new_user_session_path, :class => 'btn btn-xs btn-danger', :id => 'loginbutton', :onclick => 'hidelink()'%> </li>
             <% end %>
           </ul>
         </div>
@@ -65,8 +65,6 @@
         <div class="col-lg-9">
           <%= bootstrap_flash %>
           <%= yield %>
-
-          <%= render 'layouts/user_widget'%>
 
         </div>
         <div class="col-lg-3">
@@ -89,4 +87,12 @@
     </div> <!-- /container -->
 
   </body>
+  <script type="text/javascript">
+    function hidelink()
+    {
+      document.getElementById("loginbutton").style.opacity = 0.;
+
+    }
+  </script>
 </html>
+
