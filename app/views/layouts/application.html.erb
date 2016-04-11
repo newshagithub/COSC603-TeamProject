@@ -46,11 +46,15 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#">Finding Black Holes For Dummies</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+        <div class="navbar-collapse collapse navbar-responsive-collapse"; style="text-align: bottom">
+          <ul class="nav navbar-nav"; width="100%"; style="float: right">
+            <% if user_signed_in? %>
+                <li> <%= link_to 'Welcome ' + current_user.email, '#'%></li>
+                <%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary' %>
+            <% else %>
+                <li><%= link_to "You are not signed in.", '#' %></li>
+            <li><%= link_to "Login", new_user_session_path, :class => 'btn btn-xs btn-danger'%> </li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -67,19 +71,19 @@
         </div>
         <div class="col-lg-3">
           <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
+            <h4>Black Holes On The Web</h4>
             <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+              <li class="nav-header">Check out these great resources:</li>
+              <li><%= link_to "nasa.gov", "http://www.nasa.gov/audience/forstudents/k-4/stories/nasa-knows/what-is-a-black-hole-k4.html", :target => '_blank'%></li>
+              <li><%= link_to "space.com", "http://www.space.com/15421-black-holes-facts-formation-discovery-sdcmp.html", :target => '_blank'  %></li>
+              <li><%= link_to "kidsastronomy.com", "http://www.kidsastronomy.com/black_hole.htm", :target => '_blank'  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2016</p>
+        <p>&copy; James, Newsha &amp; Sigrid 2016</p>
       </footer>
 
     </div> <!-- /container -->
