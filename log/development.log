@@ -3930,3 +3930,9 @@ Started GET "/lectures/do_lecture" for 127.0.0.1 at 2016-04-11 15:25:45 -0400
 Processing by LecturesController#do_lecture as HTML
   Rendered text template (0.0ms)
 Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses/do_course" for 127.0.0.1 at 2016-04-11 15:31:20 -0400
+Processing by CoursesController#do_course as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)

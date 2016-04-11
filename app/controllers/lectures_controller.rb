@@ -3,7 +3,7 @@ class LecturesController < ApplicationController
 
   # GET /lectures Student View
   def do_lecture
-    render :text=>"hi"
+    render :text=>"lecture!"
   end
 
   # GET /lectures

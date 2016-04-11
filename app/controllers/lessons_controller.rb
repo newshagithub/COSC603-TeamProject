@@ -1,6 +1,11 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
+  # GET /lesson student selected
+  def do_lesson
+    render :text=>"lesson"
+  end
+
   # GET /lessons
   # GET /lessons.json
   def index
