@@ -4338,3 +4338,730 @@ Processing by Devise::SessionsController#new as HTML
   Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (16.5ms)
   Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (38.3ms)
 Completed 200 OK in 183ms (Views: 178.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-11 23:54:27 -0400
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 132ms (Views: 129.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-11 23:54:32 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (10.7ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 141ms (Views: 137.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-11 23:54:34 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-11 23:54:34 -0400
+
+
+Started GET "/" for ::1 at 2016-04-12 00:00:30 -0400
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 181ms (Views: 178.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 00:00:30 -0400
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 86ms (Views: 85.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:00:32 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (8.6ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 119ms (Views: 106.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:00:34 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:00:34 -0400
+
+
+Started GET "/users/auth/facebook/callback?code=AQDL_YI0QiIWVcCJTuZhQCjGM2_Zpyemvdpfz0-fzjfQhXJelpQ95GfEntRCP3o06cmnntY90Grwt10CGzQXAEJjpjtkdYNLQHVsEZ2aPjDeZOZkzuf0ZUZJe4Ra0dw7WyCt-oQ81umF94RZgEs8EJxj2DKTYCxKnOLlex1p8BwMr2X-xW9ogpi9i6N08--nYiQFiCp9uZqfo1XSAXI7mjsPSk2X5XiMsfazMWHbunAzzB3APmqk40EfYBynT3sbd7izRHxtERyE5UbAUVDCNfustj7GcPe12itxo-NcubBPIC5gQdy1O6iZZEAa4JgdwMCrhe86k3BWSSilViuXuoGUYcEMLAFQ6BxazXqm5VHMVA&state=6caa6479b2fe172f22b5a1006a2be886e3cc2bf631008f08" for ::1 at 2016-04-12 00:00:41 -0400
+Processing by Devise::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDL_YI0QiIWVcCJTuZhQCjGM2_Zpyemvdpfz0-fzjfQhXJelpQ95GfEntRCP3o06cmnntY90Grwt10CGzQXAEJjpjtkdYNLQHVsEZ2aPjDeZOZkzuf0ZUZJe4Ra0dw7WyCt-oQ81umF94RZgEs8EJxj2DKTYCxKnOLlex1p8BwMr2X-xW9ogpi9i6N08--nYiQFiCp9uZqfo1XSAXI7mjsPSk2X5XiMsfazMWHbunAzzB3APmqk40EfYBynT3sbd7izRHxtERyE5UbAUVDCNfustj7GcPe12itxo-NcubBPIC5gQdy1O6iZZEAa4JgdwMCrhe86k3BWSSilViuXuoGUYcEMLAFQ6BxazXqm5VHMVA", "state"=>"6caa6479b2fe172f22b5a1006a2be886e3cc2bf631008f08"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:00:41 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (7.6ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 107ms (Views: 106.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQBtOe4fJILi9EF2KgwCeF8zQ4yYzUC1CcjPyKnASQ08xN5I7cStCDpP9luD6kFp3qV7mbEhlZ8_Qm-J5_ni2TDDOwLiasYtXnI1MXLbJ9h1H8TZrqgwdZ117cdXLudFT0lh-tloZxHd_BfHgpT8u6nxSsaqhXn1hwJ9c0O4iRgggIjm-6HyaWFY2k3AofytGObMaJUoKrzlT7f4Ox9isZfQG0keZa59aGTVFs0wv0b2J5_Pw1lgSfQa1s9794RAkbAOqjXSFJfyGNThgR3xTzA3ikJHif5OYvzFhC_Rn_rXz9nU4Kl-QEek4d4UAF0c53j6BW_ggRBgPliCn8hAiftbgWA1NZ1BXAWmyPeQ-EoyAA&state=6caa6479b2fe172f22b5a1006a2be886e3cc2bf631008f08" for ::1 at 2016-04-12 00:01:01 -0400
+Processing by Devise::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBtOe4fJILi9EF2KgwCeF8zQ4yYzUC1CcjPyKnASQ08xN5I7cStCDpP9luD6kFp3qV7mbEhlZ8_Qm-J5_ni2TDDOwLiasYtXnI1MXLbJ9h1H8TZrqgwdZ117cdXLudFT0lh-tloZxHd_BfHgpT8u6nxSsaqhXn1hwJ9c0O4iRgggIjm-6HyaWFY2k3AofytGObMaJUoKrzlT7f4Ox9isZfQG0keZa59aGTVFs0wv0b2J5_Pw1lgSfQa1s9794RAkbAOqjXSFJfyGNThgR3xTzA3ikJHif5OYvzFhC_Rn_rXz9nU4Kl-QEek4d4UAF0c53j6BW_ggRBgPliCn8hAiftbgWA1NZ1BXAWmyPeQ-EoyAA", "state"=>"6caa6479b2fe172f22b5a1006a2be886e3cc2bf631008f08"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:01:03 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:01:03 -0400
+
+
+Started GET "/users/auth/facebook/callback?code=AQDaNXbIty4IpCACs_RNomtJvQTXH3ArdJ13kbFLgCs0d1rQzqe_hZi3E_qlnY_zo9EIDE4tMrM2YWrHgg90H_DAm93FacS7J1t8TlXvub76DFKYOieKuX1w8fUdTifBM6qGhgSXMGLldXXTsC-IUbx-II74E0oaz8YEuZquttvUi2jLnTxLDce-1R1p9vqsMXTZisMuZTqlYnnMy1q9QCi74akBmLgWUHs1wVBJKvJV3WKgQoCa9UOswZqcnEbzbMLbWelQ2QgpGfh16dJDV7J3RASweFG3QVEYmObWsO04HuGDlhwmrxoL3o13qsbEiUqju1Xnyy30ol9Mv8mlZmlC5DEceeJjoJbZ_FcwxRoy9g&state=6d1f09ce7684a4323f9b15e379a49c207e72479c03bf86f9" for ::1 at 2016-04-12 00:01:03 -0400
+Processing by Devise::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDaNXbIty4IpCACs_RNomtJvQTXH3ArdJ13kbFLgCs0d1rQzqe_hZi3E_qlnY_zo9EIDE4tMrM2YWrHgg90H_DAm93FacS7J1t8TlXvub76DFKYOieKuX1w8fUdTifBM6qGhgSXMGLldXXTsC-IUbx-II74E0oaz8YEuZquttvUi2jLnTxLDce-1R1p9vqsMXTZisMuZTqlYnnMy1q9QCi74akBmLgWUHs1wVBJKvJV3WKgQoCa9UOswZqcnEbzbMLbWelQ2QgpGfh16dJDV7J3RASweFG3QVEYmObWsO04HuGDlhwmrxoL3o13qsbEiUqju1Xnyy30ol9Mv8mlZmlC5DEceeJjoJbZ_FcwxRoy9g", "state"=>"6d1f09ce7684a4323f9b15e379a49c207e72479c03bf86f9"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:01:04 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (9.3ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 93ms (Views: 91.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:01:06 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:01:06 -0400
+
+
+Started GET "/users/auth/facebook/callback?code=AQCWva7rQEozqj0wyKWCE65OWBS503bB1uSPtQ97widAsrkZ3AWErgxZf2J795lj9-rEbc_v7FCYu3TqVKL0ryhBguxxfN9pTIuY6coOmiEJRYbTR--zRm9BGycZZuX7Gqo0kn1J3hRr5wLHe0EqOS8mjPJ_1Uj9S2wMytqectFjQD0l-_VpslEjYuVMDJFOFSsbXceUN1qdfQkLx3LDXefjr_7hezRVWPQQnL9s6jwIy1Bs6rSVrW5iyI7BDL1qSxANL1f_kNhMpdiH1OWSTgSIH_aiO04x4Jit3qY9ZEhBytuFeV6DUqsqOIudVNCrL7eF0wGXY8EMBXu82gJQilj6Ci5L8ObVHtBPdV6vYKNtpA&state=37feebf5163b85e3e1f04daf28b6040e4897ee7a50e7ce85" for ::1 at 2016-04-12 00:01:06 -0400
+Processing by Devise::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCWva7rQEozqj0wyKWCE65OWBS503bB1uSPtQ97widAsrkZ3AWErgxZf2J795lj9-rEbc_v7FCYu3TqVKL0ryhBguxxfN9pTIuY6coOmiEJRYbTR--zRm9BGycZZuX7Gqo0kn1J3hRr5wLHe0EqOS8mjPJ_1Uj9S2wMytqectFjQD0l-_VpslEjYuVMDJFOFSsbXceUN1qdfQkLx3LDXefjr_7hezRVWPQQnL9s6jwIy1Bs6rSVrW5iyI7BDL1qSxANL1f_kNhMpdiH1OWSTgSIH_aiO04x4Jit3qY9ZEhBytuFeV6DUqsqOIudVNCrL7eF0wGXY8EMBXu82gJQilj6Ci5L8ObVHtBPdV6vYKNtpA", "state"=>"37feebf5163b85e3e1f04daf28b6040e4897ee7a50e7ce85"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:01:06 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (10.8ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 100ms (Views: 99.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 00:01:17 -0400
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 64ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:01:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (9.6ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 96ms (Views: 94.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:01:21 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:01:21 -0400
+
+
+Started GET "/users/auth/facebook/callback?code=AQDdPq3Hwkv8WvWvOroSWNpMNXS672ohOXhY90wE6eynqCW_ePrI6eRPYRur2_hqStwpXMdMu5dr4lnrm0kyFSUuwBxvVa7fOKQzDNLqtckT_FNyzgiBjc83BQZQgwlCRK-rYVFaWbr_6EEoADkftTnphEM3Jurexb5XvGRt9gv9I3Bb3C3L5EvKdrD4drTaE5RiVkf60vFpl7I9pabgINNz9rgGfELs3e3E0itUi8JuPWx8NYZCujIG3dJ5P4GoRSTdqHVctfRzuYMOKum1i_cJRk7YLJFBFcgetpshtCOTOZLBYPayOOblc0c-GCgjQ9VHxcAoUoYnV3firkd-Y88kMJGt-HAcWeWTVkHKyTUApA&state=7e013d100c5d466505540ded7993c2118130b0d379fadab6" for ::1 at 2016-04-12 00:01:21 -0400
+Processing by Devise::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDdPq3Hwkv8WvWvOroSWNpMNXS672ohOXhY90wE6eynqCW_ePrI6eRPYRur2_hqStwpXMdMu5dr4lnrm0kyFSUuwBxvVa7fOKQzDNLqtckT_FNyzgiBjc83BQZQgwlCRK-rYVFaWbr_6EEoADkftTnphEM3Jurexb5XvGRt9gv9I3Bb3C3L5EvKdrD4drTaE5RiVkf60vFpl7I9pabgINNz9rgGfELs3e3E0itUi8JuPWx8NYZCujIG3dJ5P4GoRSTdqHVctfRzuYMOKum1i_cJRk7YLJFBFcgetpshtCOTOZLBYPayOOblc0c-GCgjQ9VHxcAoUoYnV3firkd-Y88kMJGt-HAcWeWTVkHKyTUApA", "state"=>"7e013d100c5d466505540ded7993c2118130b0d379fadab6"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:01:22 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (7.8ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 108ms (Views: 106.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 00:01:27 -0400
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 70ms (Views: 69.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 00:01:36 -0400
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 74ms (Views: 73.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/lessons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/lectures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/main.self-054c2a1714c8d8cf72e61f44d2aca18a0c46453428a24f1bf04067e2ef479db7.css?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/scaffolds.self-6e797b4954e7d937ca110aeb115dba351f5b38e79b9ead346bbd64b837fcb2a7.css?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/lectures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/lessons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/assets/spaghetti_astronaut-e102b68e77f0483fc95b10c959a89e4bcc141bb3c98ff987971e4a8829847704.png" for ::1 at 2016-04-12 00:01:36 -0400
+
+
+Started GET "/images/favicon.ico" for ::1 at 2016-04-12 00:01:36 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5.1) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5.1) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/newsha/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/newsha/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/newsha/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.9ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.7ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (130.9ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (82.6ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1@global/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (173.8ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:01:38 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (7.4ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 93ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:01:40 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:01:40 -0400
+
+
+Started GET "/users/auth/facebook/callback?error_code=4201&error_message=User+canceled+the+Dialog+flow&state=4372bf55e871caa1aa8ae38eda70c6328bcf92c1d15a1091" for ::1 at 2016-04-12 00:01:57 -0400
+Processing by Devise::OmniauthCallbacksController#failure as HTML
+  Parameters: {"error_code"=>"4201", "error_message"=>"User canceled the Dialog flow", "state"=>"4372bf55e871caa1aa8ae38eda70c6328bcf92c1d15a1091"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:01:57 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (10.5ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 133ms (Views: 132.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:02:12 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (8.6ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 85ms (Views: 83.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:02:14 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:02:14 -0400
+
+
+Started GET "/users/auth/facebook/callback?code=AQC7yZ5lsMlTnMx4wmik2PNwCyk4lsO1GfKUErQ6WqapVK4cJ13RT5oStz-WCQj_eLGRY1WB-ViZz9YThOiTay5Hw9cjo_qYWiHS6XM7vQVYnTR1Kddo5po5M1mV3phMrTZArutFmX1OiWPEA1rE74INGNV-h7xZoZG2RaBoFjIDJt4SzswftMRr9JVHATRQEF5Biyqr2AEw8opwHkV4KXHgRe8ai-U4WW08tmd8DcTF98QDiHhZmpdo_Ut7ZE7ewDhMUK0alhfqqwHzhF62LemPCf7VVTO0CAqk85c-EfrytvEYtQ3PgiYaZE1SD5s4YJa9PKRB8BfqYFkG25IhjrPRnMqbAw80tz4w_Gt4W58Pkw&state=2a9cd43629218268339d4777836bab2c0df5c1f5555c8e37" for ::1 at 2016-04-12 00:02:15 -0400
+Processing by Devise::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQC7yZ5lsMlTnMx4wmik2PNwCyk4lsO1GfKUErQ6WqapVK4cJ13RT5oStz-WCQj_eLGRY1WB-ViZz9YThOiTay5Hw9cjo_qYWiHS6XM7vQVYnTR1Kddo5po5M1mV3phMrTZArutFmX1OiWPEA1rE74INGNV-h7xZoZG2RaBoFjIDJt4SzswftMRr9JVHATRQEF5Biyqr2AEw8opwHkV4KXHgRe8ai-U4WW08tmd8DcTF98QDiHhZmpdo_Ut7ZE7ewDhMUK0alhfqqwHzhF62LemPCf7VVTO0CAqk85c-EfrytvEYtQ3PgiYaZE1SD5s4YJa9PKRB8BfqYFkG25IhjrPRnMqbAw80tz4w_Gt4W58Pkw", "state"=>"2a9cd43629218268339d4777836bab2c0df5c1f5555c8e37"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:02:15 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (6.9ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 94ms (Views: 92.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 00:13:44 -0400
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 160ms (Views: 157.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-12 00:13:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-04-12 00:13:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-04-12 00:13:45 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-12 00:13:45 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-04-12 00:13:45 -0400
+
+
+Started GET "/assets/main.self-054c2a1714c8d8cf72e61f44d2aca18a0c46453428a24f1bf04067e2ef479db7.css?body=1" for ::1 at 2016-04-12 00:13:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-04-12 00:13:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-04-12 00:13:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-04-12 00:13:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-04-12 00:13:45 -0400
+
+
+Started GET "/assets/lectures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:13:45 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-12 00:13:45 -0400
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:13:47 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (8.4ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 113ms (Views: 82.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:13:49 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:13:49 -0400
+
+
+Started GET "/users/auth/facebook/callback?error_code=4201&error_message=User+canceled+the+Dialog+flow&state=eacf2cfd4b98c737311a21aea4d5a4beee266ede8d73e585" for ::1 at 2016-04-12 00:13:54 -0400
+Processing by Devise::OmniauthCallbacksController#failure as HTML
+  Parameters: {"error_code"=>"4201", "error_message"=>"User canceled the Dialog flow", "state"=>"eacf2cfd4b98c737311a21aea4d5a4beee266ede8d73e585"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:13:54 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (10.3ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 114ms (Views: 111.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 00:28:22 -0400
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 327ms (Views: 319.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:28:24 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (14.0ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 133ms (Views: 129.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:28:26 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:28:26 -0400
+
+
+Started GET "/" for ::1 at 2016-04-12 00:28:39 -0400
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 101ms (Views: 100.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-12 00:28:40 -0400
+Processing by MainController#index as HTML
+  Rendered main/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 88ms (Views: 87.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:28:42 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (8.1ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 117ms (Views: 116.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:28:43 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:28:44 -0400
+
+
+Started GET "/users/auth/facebook/callback?code=AQB0q_dAaRpF-rXWlaNpzDfaYFx3Ol2Tn0OE6gdKuuxtKoOIsQJ6EErvTZiQAXGXKczKb8XNaVgwQg0XmKfZMJiqNg-2L1_zeiVmPVmJLZ1Kc-kxjumW7Sk0rakElLyhwdLMa8O5NzmVyHVaLr9WJjG0vVn48hAA7t3VAUhtx0x4TGrkf-S9_gk7gkvq1pH3eHrLI20kbgTwCaq1MdHpsXLpi88TWWcpBbuvuqpVFgNXnr7Yx7Go1ap7GuWaoOBwj7Bzu824d8v1Cw9smzkyz25MG1CPPoNceEENWrI2dXmeSBZYbNguw6UCpGzC1sqJ2OwQ5PZU6ucTMEntrLxKvaEXNPbdRqt3GrphGhfVsLBn5w&state=73f158087dfbd833cb2a132c32f2ea29216e11adc72d7414" for ::1 at 2016-04-12 00:28:44 -0400
+Processing by Devise::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQB0q_dAaRpF-rXWlaNpzDfaYFx3Ol2Tn0OE6gdKuuxtKoOIsQJ6EErvTZiQAXGXKczKb8XNaVgwQg0XmKfZMJiqNg-2L1_zeiVmPVmJLZ1Kc-kxjumW7Sk0rakElLyhwdLMa8O5NzmVyHVaLr9WJjG0vVn48hAA7t3VAUhtx0x4TGrkf-S9_gk7gkvq1pH3eHrLI20kbgTwCaq1MdHpsXLpi88TWWcpBbuvuqpVFgNXnr7Yx7Go1ap7GuWaoOBwj7Bzu824d8v1Cw9smzkyz25MG1CPPoNceEENWrI2dXmeSBZYbNguw6UCpGzC1sqJ2OwQ5PZU6ucTMEntrLxKvaEXNPbdRqt3GrphGhfVsLBn5w", "state"=>"73f158087dfbd833cb2a132c32f2ea29216e11adc72d7414"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:28:45 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (9.3ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 112ms (Views: 111.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook/callback?error_code=1349126&error_message=App+Not+Setup%3A+This+app+is+still+in+development+mode%2C+and+you+don%27t+have+access+to+it.+Switch+to+a+registered+test+user+or+ask+an+app+admin+for+permissions.&state=837215bba507c266a78d8e62465a7bf37e87276b67acae44" for ::1 at 2016-04-12 00:29:34 -0400
+Processing by Devise::OmniauthCallbacksController#failure as HTML
+  Parameters: {"error_code"=>"1349126", "error_message"=>"App Not Setup: This app is still in development mode, and you don't have access to it. Switch to a registered test user or ask an app admin for permissions.", "state"=>"837215bba507c266a78d8e62465a7bf37e87276b67acae44"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:29:34 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (9.1ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 128ms (Views: 125.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:29:40 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (9.3ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 101ms (Views: 99.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/main.self-054c2a1714c8d8cf72e61f44d2aca18a0c46453428a24f1bf04067e2ef479db7.css?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/lessons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/scaffolds.self-6e797b4954e7d937ca110aeb115dba351f5b38e79b9ead346bbd64b837fcb2a7.css?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/lectures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/lectures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/lessons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:29:40 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:29:42 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:29:42 -0400
+
+
+Started GET "/users/auth/facebook/callback?code=AQA3nnnCASJe8fJ3Px4n8NexdsUrvXN1NMr9qXaQHFDxog5YMxvKBuPBnYTqmGXDA__bG6zdzvCS5gl48oYaYkW83vke4abpFdt8Jv2m44Uni7mj4Vz-hkVd4iOuHDFN4O26rmUIh3pf5ci2W5-eMmgmrbOZH_FwspzH3Xb-xrxb9K5U4URuXo7hy7-Zwtpxw8dx7Y4hYzjyr__GNXNtqEdb2jIYa18M0mfIOfQxxCRNkR03hQIBZAvbMjI5cjGhKpnpxkuP3JF54e65Dh2KRALqPPmmbIC4Zo7Jjng50vtLBaDJgl3eHYKXh4ntICO94oQzOIC7KTdo9rxL77PS6g532gbk9r8dWi4GvT7nbDygLA&state=bd9a7056f6682739cf3228ce0a30b4910ea43c5415d2cca1" for ::1 at 2016-04-12 00:29:52 -0400
+Processing by Devise::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQA3nnnCASJe8fJ3Px4n8NexdsUrvXN1NMr9qXaQHFDxog5YMxvKBuPBnYTqmGXDA__bG6zdzvCS5gl48oYaYkW83vke4abpFdt8Jv2m44Uni7mj4Vz-hkVd4iOuHDFN4O26rmUIh3pf5ci2W5-eMmgmrbOZH_FwspzH3Xb-xrxb9K5U4URuXo7hy7-Zwtpxw8dx7Y4hYzjyr__GNXNtqEdb2jIYa18M0mfIOfQxxCRNkR03hQIBZAvbMjI5cjGhKpnpxkuP3JF54e65Dh2KRALqPPmmbIC4Zo7Jjng50vtLBaDJgl3eHYKXh4ntICO94oQzOIC7KTdo9rxL77PS6g532gbk9r8dWi4GvT7nbDygLA", "state"=>"bd9a7056f6682739cf3228ce0a30b4910ea43c5415d2cca1"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:29:52 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (9.1ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 101ms (Views: 99.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:29:56 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (8.7ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 105ms (Views: 103.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/lessons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/lectures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/main.self-054c2a1714c8d8cf72e61f44d2aca18a0c46453428a24f1bf04067e2ef479db7.css?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/scaffolds.self-6e797b4954e7d937ca110aeb115dba351f5b38e79b9ead346bbd64b837fcb2a7.css?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/lessons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/lectures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-04-12 00:29:56 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:29:58 -0400
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-04-12 00:29:58 -0400
+
+
+Started GET "/users/auth/facebook/callback?code=AQB8had2KDadFzlz5H8t8jFO2-oPn0P9wd0CgCiBLUNQIpyl-lYgsfebHvjNCtHTTLj49qAioRA8Ouuaza6gfpvDxAHi27irl1l3icJ4XB3i2fRNGPT_wCNTrEWWMWIfQb8qNhbjlbVdsWqVp1iccj3ZpcivgHFsVCTLp8creTgGwbVZYxf-fF9wnXKGoYoG_y19ux4_kP_atQ7zFYpfXyHLyEr3o4ouH4Rdim59z8rXzka5JJCD7_iSUml-XAOuKbGtGWMpaaotEPMSERa_9uWKmQhgX_VWGF3h6cAQ_RuoIUSifezEKbIm6kfyotn3Lsg5deONUmbNWd_Xct0DXTsNJoQFvveAtVJtEkb6QdFCPg&state=45c0fd0172a4e66e366cb2c5018b3f7876804f809e6f8d2a" for ::1 at 2016-04-12 00:29:59 -0400
+Processing by Devise::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQB8had2KDadFzlz5H8t8jFO2-oPn0P9wd0CgCiBLUNQIpyl-lYgsfebHvjNCtHTTLj49qAioRA8Ouuaza6gfpvDxAHi27irl1l3icJ4XB3i2fRNGPT_wCNTrEWWMWIfQb8qNhbjlbVdsWqVp1iccj3ZpcivgHFsVCTLp8creTgGwbVZYxf-fF9wnXKGoYoG_y19ux4_kP_atQ7zFYpfXyHLyEr3o4ouH4Rdim59z8rXzka5JJCD7_iSUml-XAOuKbGtGWMpaaotEPMSERa_9uWKmQhgX_VWGF3h6cAQ_RuoIUSifezEKbIm6kfyotn3Lsg5deONUmbNWd_Xct0DXTsNJoQFvveAtVJtEkb6QdFCPg", "state"=>"45c0fd0172a4e66e366cb2c5018b3f7876804f809e6f8d2a"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-04-12 00:29:59 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (8.3ms)
+  Rendered /Users/newsha/.rvm/gems/ruby-2.2.1/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 109ms (Views: 107.9ms | ActiveRecord: 0.0ms)
