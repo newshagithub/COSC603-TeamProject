@@ -1,1 +1,26 @@
-<h1>Welcome User!</h1>
+<h2><%= current_user.first_name %>'s profile:</h2>
+
+<br>
+<br>
+<br>
+
+<div>
+  <h4>My Courses</h4>
+</div>
+
+<br>
+<br>
+<br>
+
+  <div>
+    <h4>Start a new course:</h4>
+    <ul>
+    <% @courses.each do |course|%>
+     <li style="font-size: large"><%= link_to course.name, {controller: "courses", action: "show", course_id: course.id, lesson_id: 1, lecture_id: 1/} %></li>
+    <% end %>
+    <ul>
+  </div>
+
+<br>
+<br>
+<br>

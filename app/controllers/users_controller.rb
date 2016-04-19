@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   end
 
   def overview
+    #@current_user ||= User.find(session[:user_id])
+
+    @courses=Course.all
 
   end
 

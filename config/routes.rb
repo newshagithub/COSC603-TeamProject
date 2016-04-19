@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'lessons/view_lessons'
   get 'lectures/view_lectures'
 
-  devise_for :users, controllers: { registrations: 'devise/registrations'}
+  devise_for :users, controllers: { registrations: 'users/registrations'}
   resources :lectures
   resources :lessons
   resources :courses
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'main#index'
+  get '/courses/show'
+  get 'users/overview'
 
 
   # Example of regular route:
