@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
+<%- model_class = Lecture -%>
+<div class="page-header">
+  <h2><%= @lecture.lesson.name %></h2>
+  <h1><%=t @lecture.name %></h1>
+</div>
 
-<%= yield %>
-
-</body>
-</html>
+<dl class="dl-horizontal">
+  <dl><%= @lecture.reading.html_safe %></dl>
+</dl>

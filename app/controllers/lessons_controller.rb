@@ -12,6 +12,11 @@ class LessonsController < ApplicationController
     @lessons = Lesson.all
   end
 
+  def view_lessons
+    @course_id = params[:id]
+    @lessons = Lesson.where(course_id: @course_id)
+  end
+
   # GET /lessons/1
   # GET /lessons/1.json
   def show

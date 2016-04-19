@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'lectures/do_lecture'
   get 'lessons/do_lesson'
   get 'courses/do_course'
+  get 'lessons/view_lessons'
+  get 'lectures/view_lectures'
 
   devise_for :users, controllers: { registrations: 'devise/registrations'}
   resources :lectures

@@ -3,7 +3,13 @@ class LecturesController < ApplicationController
 
   # GET /lectures Student View
   def do_lecture
-    render :text=>"lecture!"
+    @lecture = Lecture.find(params[:id])
+  end
+
+  def view_lectures
+    @lesson_id = params[:id]
+    @lesson = Lesson.find(@lesson_id)
+    @lectures = Lecture.where(lesson_id: @lesson_id)
   end
 
   # GET /lectures
