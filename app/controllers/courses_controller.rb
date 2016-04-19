@@ -21,6 +21,7 @@ class CoursesController < ApplicationController
     @lecture_id = params[:lecture_id]
     @lecture = Lecture.where(lesson_id: @lesson_id).first
 
+    @answers = @lecture.quizAnswers
   end
 
   # GET /courses/new
