@@ -22,6 +22,8 @@
   <dd><%= @user.current_sign_in_ip %></dd>
   <dt><strong><%= model_class.human_attribute_name(:last_sign_in_ip) %>:</strong></dt>
   <dd><%= @user.last_sign_in_ip %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar) %>:</strong></dt>
+  <dd><%= image_tag @user.avatar.url(:large) %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
