@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# course 1 / lesson 1
 Course.create!(name: %{Black Holes})
 Lesson.create!(name: %{What is a Black Hole?}, course_id: 1)
 Lecture.create!([{name: %{Introduction},
@@ -46,3 +47,51 @@ Lecture.create!([{name: %{Introduction},
                             quizQuestions: %{Could a black hole destroy Earth?},
                             quizAnswers: %{No, black holes do not run around gobbling up planets.},
                             lesson_id: 1}])
+# course 2 / lecture 1
+Course.create!(name: %{History & Research on Balck Holes})
+Lesson.create!(name: %{History of Black Holes}, course_id: 2)
+Lecture.create!([{name: %{John Mitchell},
+                  reading:%{<p> In 1783, an English geologist named John Mitchell wrote that it might be possible for something to be so big and heavy that the escape speed from its gravity is equal to the speed of light. <p>
+<p>For a small thing, like a rocket, to escape from a larger thing, like Earth, it has to escape the pull of our gravity or it will fall back. The speed that it must travel upward to get away from Earth's gravity is called escape velocity.</p>
+<p> Bigger planets (like Jupiter) and stars have more mass, so have stronger gravity than Earth, so the escape velocity is much faster. </p>
+<p> John Mitchell thought it was possible for something to be so big that the escape velocity would be faster than the speed of light, so even light could not escape.</p>},
+                  quizQuestions: %{Was John Mitchell think a astrologist?},
+                  quizAnswers: %{No},
+                  lesson_id: 1},
+                 {name: %{Pierre-Simon Laplace},
+                  reading: %{<p> Some scientists thought Mitchell might be right, but others thought that light had no mass and would not be pulled by gravity. His theory was forgotten.</p>
+<p> In 1796, Pierre-Simon Laplace promoted the same idea in the first and second editions of his book Exposition du système du Monde (it was removed from later editions).</p>},
+                  quizQuestions: %{Did Pierre-Simon Laplace promote Mitchell’s idea?},
+                  quizAnswers: %{Yes},
+                  lesson_id: 1},
+                 {name: %{Albert Einstein},
+                  reading: %{<p> In 1916 Albert Einstein wrote an explanation of gravity called general relativity. It is a very complicated theory, but there are two important things about it:</p>
+<p> Mass causes space (and spacetime) to bend, or curve. Moving things "fall along" or follow the curves in space. This is what we call gravity.
+</p>
+<p>Light always travels at the same speed, and is affected by gravity. If it seems to change speed, it is really traveling along a curve in spacetime.</p>
+<p> A few months later, while serving in the war, the German physicist Karl Schwarzschild used Einstein's equations to show that a black hole could exist. </p>},
+                  quizQuestions: %{Did Schwarzschild use Einstein's explanation of gravity to show that the black hole can exist?},
+                  quizAnswers: %{Yes},
+                  lesson_id: 1}])
+
+# course 2 / lecture 2
+Lesson.create!(name: %{Research on Black Holes}, course_id: 2)
+Lecture.create!([{name: %{Introduction},
+                  reading:%{<p> Research on weird, invisible objects called black holes might help explain how the universe began.</p>
+<p>If you were to jump into a black hole (something that no one has yet figured out how to do), you'd be stretched from head to toe and squeezed from side to side into a long string of human spaghetti. Finally, you'd get pulverized into the tiniest bits imaginable.</p>},
+                  quizQuestions: %{If you were to jump into a black hole, would you get taller?},
+                  quizAnswers: %{Yes},
+                  lesson_id: 2},
+                 {name: %{Black Holes and Gravity},
+                  reading: %{<p> The more mass an object has, the more gravity it has. So, black holes have a lot of gravity. Black holes formed in a supernova may be only a few times the mass of our sun. On the other hand, black holes at the centers of galaxies may have a billion times as much mass as the sun, all crammed into a very small space.</p>
+<p> Earth's gravity keeps us on the ground; a black hole's gravity sucks things in. Its pull is so strong that not even light can escape. That's why it looks black—as if there's nothing there.</p>},
+                  quizQuestions: %{Does the earth and black hole’s gravity work the same way?},
+                  quizAnswers: %{No},
+                  lesson_id: 2},
+                 {name: %{How do scientists study black holes?},
+                  reading: %{<p> Because black holes are so weird (not to mention invisible), they can be difficult to study.</p>
+<p>Scientists tackle this problem in two ways. Some use telescopes to make observations, staring into the sky and looking for signs of radiation that signal the presence of a black hole. Others use mathematics and computers to develop theories about black holes and explore the behavior of equations that describe such objects. They do thought experiments.</p>},
+                  quizQuestions: %{If we can’t see the black holes, do scientists still use telescope to study them?},
+                  quizAnswers: %{Yes},
+                  lesson_id: 2}])
+
