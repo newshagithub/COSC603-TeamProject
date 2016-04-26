@@ -47,7 +47,7 @@ Lecture.create!([{name: %{Introduction},
                             quizQuestions: %{Could a black hole destroy Earth?},
                             quizAnswers: %{No, black holes do not run around gobbling up planets.},
                             lesson_id: 1}])
-# course 2 / lecture 1
+# course 2 / lesson 1
 Course.create!(name: %{History & Research on Balck Holes})
 Lesson.create!(name: %{History of Black Holes}, course_id: 2)
 Lecture.create!([{name: %{John Mitchell},
@@ -74,7 +74,7 @@ Lecture.create!([{name: %{John Mitchell},
                   quizAnswers: %{Yes},
                   lesson_id: 1}])
 
-# course 2 / lecture 2
+# course 2 / lesson 2
 Lesson.create!(name: %{Research on Black Holes}, course_id: 2)
 Lecture.create!([{name: %{Introduction},
                   reading:%{<p> Research on weird, invisible objects called black holes might help explain how the universe began.</p>
@@ -94,4 +94,43 @@ Lecture.create!([{name: %{Introduction},
                   quizQuestions: %{If we can’t see the black holes, do scientists still use telescope to study them?},
                   quizAnswers: %{Yes},
                   lesson_id: 2}])
-
+
+# course 3 / lesson 1
+Course.create!(name: %{Advanced Topics on Black Holes})
+Lesson.create!(name: %{ Effect on light }, course_id: 3)
+Lecture.create!([{name: %{Singularity},
+                  reading:%{<p> At the middle of a black hole, there is a gravitational center called a singularity. It is impossible to see it because the gravity prevents any light escaping. Around the tiny singularity, there is a large area where light which would normally pass by gets sucked in as well.<p>
+<p> The edge of this area is called the event horizon. The gravity of the black hole gets weaker at a distance. The event horizon is the place farthest away from the middle where the gravity is still strong enough to trap light.</p>},
+                  quizQuestions: %{Is the edge of the event horizon called Singularity?},
+                  quizAnswers: %{No},
+                  lesson_id: 1},
+                 {name: %{Accretion Disk },
+                  reading: %{<p> Outside the event horizon, light and matter will still be pulled toward the black hole. If a black hole is surrounded by matter, the matter will form an "accretion disk" (accretion means "gathering") around the black hole. </p>
+<p> An accretion disk looks something like the rings of Saturn. As it gets sucked in, the matter gets very hot and shoots x-ray radiation into space. Think of this as the water spinning around the hole before it falls in.</p>},
+                  quizQuestions: %{Does the “accretion disk” surround the black hole?},
+                  quizAnswers: %{Yes},
+                  lesson_id: 1},
+                 {name: %{Gravitational Lensingng},
+                  reading: %{<p> Since we cannot see black holes, they must be detected by other means. When a black hole passes between us and a source of light, the light bends around the black hole creating a mirror image. That effect is called gravitational lensing.</p>},
+                  quizQuestions: %{Is bending light the reason for Gravitational Lensingng effect?},
+                  quizAnswers: %{Yes},
+                  lesson_id: 1}])
+
+# course 3 / lesson 2
+Lesson.create!(name: %{Hawking Radiation}, course_id: 3)
+Lecture.create!([{name: %{Introduction},
+                  reading:%{<p> In 1974, Hawking predicted that black holes are not entirely black but emit small amounts of thermal radiation; this effect has become known as Hawking radiation. By applying quantum field theory to a static black hole background, he determined that a black hole should emit particles in a perfect black body spectrum.</p>},
+                  quizQuestions: %{Does black holes give off rediation?},
+                  quizAnswers: %{Yes},
+                  lesson_id: 2},
+                 {name: %{ Black Hole Evaporation },
+                  reading: %{<p> Hawking radiation reduces the mass and the energy of the black hole and is therefore also known as black hole evaporation. Because of this, black holes that lose more mass than they gain through other means are expected to shrink and ultimately vanish. Micro black holes (MBHs) are predicted to be larger net emitters of radiation than larger black holes and should shrink and dissipate faster.</p>},
+                  quizQuestions: %{Do black Holes lose mass?},
+                  quizAnswers: %{Yes},
+                  lesson_id: 2},
+                 {name: %{Puzzles},
+                  reading: %{<p> There are many puzzles concerning black holes and Hawking radiation; for example, black hole evaporation via Hawking radiation seems to mean information is lost forever. The root cause of these puzzles is that quantum mechanics and General Relativity – the two most successful theories in physics, period – are incompatible, and we have no experiments or observations to help us work out how to resolve this incompatibility.</p>},
+                  quizQuestions: %{Are the current physics theories complete?},
+                  quizAnswers: %{No},
+                  lesson_id: 2}])
+
