@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+#user
+User.create!(first_name: "Homer", last_name: "Simpson", email: "homer@email.com",
+             password: "password", avatar_file_name: "homer.jpeg", avatar_content_type: "image/jpeg" )
+
 # course 1 / lesson 1
 Course.create!(name: %{Black Holes})
 Lesson.create!(name: %{What is a Black Hole?}, course_id: 1)
