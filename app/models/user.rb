@@ -23,13 +23,13 @@ class User < ActiveRecord::Base
                     }
 
   validates_attachment :avatar,
-                       :presence => true,
+                       #:presence => true,
                        :size => { :in => 0..10.megabytes },
                        :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
 
-  validates :name,
-            :presence => true,
-            :uniqueness => true
+  #validates :name,
+   #         :presence => true,
+    #        :uniqueness => true
 
   # method to extract the information that is available after the authentication.
   def self.from_omniauth(auth)
