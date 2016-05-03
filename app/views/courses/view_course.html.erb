@@ -1,6 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Courses</h1>
+<%- model_class = Course -%>
+<div class="page-header">
+  <h2><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h2>
+</div>
 
 <table class="table table-striped">
   <thead>
@@ -22,5 +23,3 @@
   <% end %>
   </tbody>
 </table>
-
-<br>
