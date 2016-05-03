@@ -3,7 +3,14 @@ class CoursesController < ApplicationController
 
   # GET /course student selected
   def do_course
-    render :text=>"course"
+    @course = Course.where(params[:course_id])
+    @lesson_id = params[:lesson_id]
+    @lesson = Lesson.where(course_id: params[:course_id]).first
+
+    @lecture_id = params[:lecture_id]
+    @lecture = Lecture.where(lesson_id: @lesson_id).first
+
+    @answers = @lecture.quizAnswers
   end
 
   # GET /courses
@@ -15,13 +22,13 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @lesson_id = params[:lesson_id]
-    @lesson = Lesson.where(course_id: params[:course_id]).first
+    #@lesson_id = params[:lesson_id]
+    #@lesson = Lesson.where(course_id: params[:course_id]).first
 
-    @lecture_id = params[:lecture_id]
-    @lecture = Lecture.where(lesson_id: @lesson_id).first
+    #@lecture_id = params[:lecture_id]
+    #@lecture = Lecture.where(lesson_id: @lesson_id).first
 
-    @answers = @lecture.quizAnswers
+    #@answers = @lecture.quizAnswers
   end
 
   # GET /courses/new
@@ -76,11 +83,13 @@ class CoursesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
-      @course = Course.find(params[:course_id])
+      #@course = Course.find(params[:course_id])
+      @course = Course.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
       params.require(:course).permit(:name, :progress)
+      #params.require(:course).permit(:name)
     end
 end
