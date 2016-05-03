@@ -1,10 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
+<%- model_class = Course -%>
+<div class="page-header">
+  <h1><%=@course.name %></h1>
+</div>
 
-<%= yield %>
+<dl class="dl-horizontal">
+  <dt><strong>Lesson: <%= @lesson_id %>:</strong></dt>
+  <dd></dd>
+</dl>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:progress) %>:</strong></dt>
+  <dd><%= 100*(@lesson_id.to_f - 1)/5  %>%</dd>
+</dl>
 
-</body>
-</html>
+<br>
+
+<h4><%= @lesson.name %></h4>
+
+<h5><%= @lecture.name %></h5>
+
+<p><%=@lecture.reading.html_safe %></p>
+
+<br>
+<div>
+  <h5>Quiz</h5>
+  <p><%=@lecture.quizQuestions.html_safe %></p>
+</div>
+
+<form>
+
+  <input type="radio" name="answer" value="yes" checked> Yes<br>
+  <input type="radio" name="answer" value="no"> No<br>
+
+</form>
+
+<br>
+<br>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+            courses_path, :class => 'btn btn-default'  %>
+<%= link_to 'Next', "#", :class => 'btn btn-default' %>
