@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get '/courses/show'
   get 'users/overview'
 
+  # for sitemap
+  get 'sitemap/sitemap'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
