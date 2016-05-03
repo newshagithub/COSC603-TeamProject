@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'lectures/do_lecture'
   get 'lessons/do_lesson'
   get 'courses/do_course'
+  get 'courses/view_course'
   get 'lessons/view_lessons'
   get 'lectures/view_lectures'
 

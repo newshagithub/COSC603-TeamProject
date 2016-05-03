@@ -13,6 +13,10 @@ class CoursesController < ApplicationController
     @answers = @lecture.quizAnswers
   end
 
+  def view_course
+    @courses = Course.all
+  end
+
   # GET /courses
   # GET /courses.json
   def index
