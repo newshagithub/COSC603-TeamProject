@@ -6,7 +6,11 @@
 <br>
 
 <div>
-  <h4>My Courses</h4>
+  <h4>My Quizzes</h4>
+
+     <ul>
+         <li style="font-size:large;"> Black Holes  &nbsp;&nbsp;&nbsp; <%= link_to "Start", {:controller => "courses", :action => "show", :course_id => 1, :lesson_id => 1, :lecture_id => 1} , {:style => "color:blue;", :class => "btn btn-xs btn-default"}%></li>
+     </ul>
 </div>
 
 <br>
@@ -14,7 +18,7 @@
 <br>
 
   <div>
-    <h4>Start a new course:</h4>
+    <h4>Start a new lecture</h4>
     <ul>
     <% @courses.each do |course|%>
      <li style="font-size: large"><%= link_to course.name, {controller: "courses", action: "do_course", course_id: course.id, lesson_id: 1, lecture_id: 1} %></li>
