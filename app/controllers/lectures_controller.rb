@@ -7,9 +7,21 @@ class LecturesController < ApplicationController
   end
 
   def view_lectures
+    #@course = Course.where(params[:course_id])
+    #@lesson_id = params[:lesson_id]
+    #@lesson = Lesson.where(course_id: params[:course_id]).first
+
+    #@lecture_id = params[:lecture_id]
+    #@lecture = Lecture.where(lesson_id: @lesson_id).first
+
+    #@course_id = params[:id]
+    #@course = Course.find(@course_id)
+    #@lessons = Lesson.where(course_id: @course_id)
+    @course_id = params[:course_id]
+
     @lesson_id = params[:id]
     @lesson = Lesson.find(@lesson_id)
-    @lectures = Lecture.where(lesson_id: @lesson_id)
+    @lectures = Lecture.where(lesson_id: @lesson_id, course_id: @course_id)
   end
 
   # GET /lectures

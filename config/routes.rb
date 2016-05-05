@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'lectures/do_lecture'
   get 'lessons/do_lesson'
   get 'courses/do_course'
+  get 'courses/view_course'
   get 'lessons/view_lessons'
   get 'lectures/view_lectures'
 
@@ -18,10 +19,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'main#index'
   get '/courses/show'
+  get '/lectures/show'
   get 'users/overview'
 
   # for sitemap
   get 'sitemap/sitemap'
+
 
 
   # Example of regular route:

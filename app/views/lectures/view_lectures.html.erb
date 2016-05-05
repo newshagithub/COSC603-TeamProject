@@ -17,13 +17,10 @@
         <td><%= link_to lecture.id, lecture_path(lecture) %></td>
         <td><%= lecture.name %></td>
         <td>
-          <%= link_to 'Take Lecture', url_for( action: 'do_lecture', id:lecture.id) %>
+          <%= link_to 'Take Lecture', url_for( action: 'do_lecture', id:lecture.id), class: 'btn btn-default btn-sm' %>
         </td>
       </tr>
   <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_lecture_path,
-            :class => 'btn btn-primary' %>
