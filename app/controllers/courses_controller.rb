@@ -9,7 +9,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.order("created_at DESC")
   end
 
   # GET /courses/1

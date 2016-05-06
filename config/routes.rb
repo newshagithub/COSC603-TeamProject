@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'lectures/view_lectures'
 
 
-  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions', callbacks: 'users/callbacks'}
+  devise_for :users, controllers: { registrations: 'users/registrations', callbacks: 'users/callbacks'}
   resources :lectures
   resources :lessons
   resources :courses
@@ -26,8 +26,6 @@ Rails.application.routes.draw do
 
   # for index
   #get 'index.xml', :controller => 'index', :action => 'index'
-
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
