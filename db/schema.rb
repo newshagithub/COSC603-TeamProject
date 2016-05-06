@@ -32,10 +32,11 @@ ActiveRecord::Schema.define(version: 20160503211752) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "quizOptions"
-    t.string   "course_id"
+    t.integer   "course_id"
   end
 
   add_index "lectures", ["lesson_id"], name: "index_lectures_on_lesson_id", using: :btree
+  add_index "lectures", ["course_id"], name: "index_lectures_on_course_id", using: :btree
 
   create_table "lessons", force: :cascade do |t|
     t.string   "name"

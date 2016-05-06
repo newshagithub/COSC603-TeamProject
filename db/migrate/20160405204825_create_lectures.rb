@@ -6,7 +6,7 @@ class CreateLectures < ActiveRecord::Migration
       t.text :quizQuestions
       t.text :quizAnswers
       t.belongs_to :lesson, index: true, foreign_key: true
-      t.belongs_to :course, index: true, foreign_key: true
+      #t.belongs_to :course, index: true, foreign_key: true
 
       t.timestamps null: false
     end

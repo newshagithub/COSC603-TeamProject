@@ -1,5 +1,6 @@
 class AddCourseIdToLectures < ActiveRecord::Migration
   def change
-    add_column :lectures, :course_id, :string
+    add_reference :lectures, :course, index: true
+    add_foreign_key :lectures, :courses
   end
 end
