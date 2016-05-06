@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   get 'lessons/view_lessons'
   get 'lectures/view_lectures'
 
-  devise_for :users, controllers: { registrations: 'users/registrations', omniauth_callbacks: 'users/callbacks'}
+
+  devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions', callbacks: 'users/callbacks'}
   resources :lectures
   resources :lessons
   resources :courses
+  resources :sitemap
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -22,8 +24,8 @@ Rails.application.routes.draw do
   get '/lectures/show'
   get 'users/overview'
 
-  # for sitemap
-  get 'sitemap/sitemap'
+  # for index
+  #get 'index.xml', :controller => 'index', :action => 'index'
 
 
 
