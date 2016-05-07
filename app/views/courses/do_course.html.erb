@@ -3,6 +3,7 @@
   <h1><%=@course.name %></h1>
 </div>
 
+
 <dl class="dl-horizontal">
   <dt><strong>Lesson: <%= @lesson_id %>:</strong></dt>
   <dd></dd>
@@ -14,28 +15,67 @@
 
 <br>
 
-<h4><%= @lesson.name %></h4>
-
-<h5><%= @lecture.name %></h5>
-
-<p><%=@lecture.reading.html_safe %></p>
+<h4>Quiz for Lesson "<%= @lesson.name %>" - <%= @lecture.name %></h4>
 
 <br>
 <div>
-  <h5>Quiz</h5>
-  <p><%=@lecture.quizQuestions.html_safe %></p>
+
+  <label><%=@lecture.quizQuestions %></label>
 </div>
 
-<form>
+<div id="answers">
+  <% @options.each do |option| %>
 
-  <input type="radio" name="answer" value="yes" checked> Yes<br>
-  <input type="radio" name="answer" value="no"> No<br>
+      <%= radio_button_tag 'option', option %> <%= option%>
+      <br />
+  <%end %>
+</div>
 
-</form>
+<br>
 
+<a href="javascript:hideshow(document.getElementById('reading') )">Need a hint?</a><br>
+<a href="javascript:checkAnswer()" class="btn btn-primary">Check your answer!</a>
+
+
+<div id="correctAnswer", style="display:none">
+  <p>Great Job!</p>
+</div>
+
+<div id="wrongAnswer", style="display:none">
+  <p>Try again!</p>
+</div>
+
+<div id="reading", style="display:none">
+  <p><%=@lecture.reading %></p>
+</div>
+
+<br>
 <br>
 <br>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
             courses_path, :class => 'btn btn-default'  %>
-<%= link_to 'Next', "#", :class => 'btn btn-default' %>
+<%= link_to 'Next', @next, :class => 'btn btn-default' %>
+<%# <%= link_to course.name, {controller: "courses", action: "show", course_id: course.id, lesson_id: 1, lecture_id: 1} %>
+
+<script type="text/javascript">
+  function hideshow(which){
+    if (!document.getElementById)
+      return
+    if (which.style.display=="block")
+      which.style.display="none"
+    else
+      which.style.display="block"
+  }
+</script>
+
+<script type="text/javascript">
+  function checkAnswer() {
+
+    if (document.getElementById("option_Yes").checked == true) {
+      alert("Good job!");
+    } else {
+      alert("Try again!");
+    }
+  }
+</script>

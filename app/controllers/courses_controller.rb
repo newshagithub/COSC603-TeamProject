@@ -3,7 +3,25 @@ class CoursesController < ApplicationController
 
   # GET /course student selected
   def do_course
-    render :text=>"course"
+    @course = Course.find_by_id(params[:course_id])
+    @lectures = Lecture.find_by_course_id(params[:course_id])
+    @course_id = params[:course_id]
+    @lesson_id = params[:lesson_id]
+    @lecture_id = params[:lecture_id]
+
+    @lesson = Lesson.where(course_id: params[:course_id]).first
+
+    @lecture_id = params[:lecture_id]
+    # @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).select(:id)
+    @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).first
+
+    @answer = @lecture.quizAnswers
+    @options = @lecture.quizOptions.split("-")
+
+    course_id_next = params[:course_id]
+    lesson_id_next = params[:lesson_id].to_i
+    lecture_id_next = params[:lecture_id].to_i+ 1
+    @next = {controller: "courses", action: "do_course", course_id: course_id_next, lesson_id: lesson_id_next, lecture_id: lecture_id_next}
   end
 
   # GET /courses
@@ -15,24 +33,6 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @lectures = Lecture.find_by_course_id(params[:course_id])
-    @course_id = params[:course_id]
-    @lesson_id = params[:lesson_id]
-    @lecture_id = params[:lecture_id]
-
-    @lesson = Lesson.where(course_id: params[:course_id]).first
-
-    @lecture_id = params[:lecture_id]
-   # @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).select(:id)
-    @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).first
-
-    @answer = @lecture.quizAnswers
-    @options = @lecture.quizOptions.split("-")
-
-    course_id_next = params[:course_id]
-    lesson_id_next = params[:lesson_id].to_i
-    lecture_id_next = params[:lecture_id].to_i+ 1
-    @next = {controller: "courses", action: "show", course_id: course_id_next, lesson_id: lesson_id_next, lecture_id: lecture_id_next}
 
   end
 
