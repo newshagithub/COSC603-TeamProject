@@ -46,7 +46,7 @@
 </div>
 
 <div id="reading", style="display:none">
-  <p><%=@lecture.reading %></p>
+  <p><%=@lecture.reading.html_safe %></p>
 </div>
 
 <br>
@@ -54,7 +54,7 @@
 <br>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-            courses_path, :class => 'btn btn-default'  %>
+            :back, :class => 'btn btn-default'  %>
 <%= link_to 'Next', @next, :class => 'btn btn-default' %>
 <%# <%= link_to course.name, {controller: "courses", action: "show", course_id: course.id, lesson_id: 1, lecture_id: 1} %>
 

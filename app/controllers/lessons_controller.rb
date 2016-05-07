@@ -13,7 +13,8 @@ class LessonsController < ApplicationController
   end
 
   def view_lessons
-    @course_id = params[:id]
+    #@course_id = params[:id]
+    @course_id = params[:course_id]
     @course = Course.find(@course_id)
     @lessons = Lesson.where(course_id: @course_id)
   end

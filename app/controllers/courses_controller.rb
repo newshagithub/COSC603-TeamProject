@@ -24,6 +24,10 @@ class CoursesController < ApplicationController
     @next = {controller: "courses", action: "do_course", course_id: course_id_next, lesson_id: lesson_id_next, lecture_id: lecture_id_next}
   end
 
+  def view_courses
+    @courses = Course.all
+  end
+
   # GET /courses
   # GET /courses.json
   def index
