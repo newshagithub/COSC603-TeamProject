@@ -20,7 +20,8 @@ class LecturesController < ApplicationController
     else
       @lecture_id = params[:lecture_id].to_i + 1
       puts @lecture_id
-      @lecture = Lecture.where(id: @lecture_id, course_id: @course_id, lesson_id: @lesson_id)
+      #@lecture = Lecture.where('id = ? AND course_id = ? AND lesson_id = ?', @lecture_id, @course_id, @lesson_id)
+      @lecture = Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id)
     end
 
 
