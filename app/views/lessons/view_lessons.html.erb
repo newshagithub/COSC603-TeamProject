@@ -17,7 +17,8 @@
       <tr>
         <td><%= lesson.name %></td>
         <td><%= @course.name %>
-        <td><%= link_to 'Take Lesson', url_for(controller:'lectures', action: 'view_lectures', id:lesson.id, course_id:@course.id ), class: 'btn btn-default btn-sm' %> </td>
+        <td><%= link_to 'View Lectures', url_for(controller:'lectures', action: 'view_lectures', id:lesson.id, course_id:@course.id ), class: 'btn btn-default btn-sm' %> </td>
+        <td><%= link_to 'Take Lesson', url_for(controller:'lectures', action: 'do_lecture', id:lesson.id, course_id:@course.id ), class: 'btn btn-default btn-sm' %> </td>
       </tr>
   <% end %>
   </tbody>
