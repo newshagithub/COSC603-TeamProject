@@ -14,7 +14,15 @@ class LecturesController < ApplicationController
 
     @lecture_id = params[:lecture_id]
     # @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).select(:id)
-    @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).first
+
+    if(@lecture_id == nil)
+      @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).first
+    else
+      @lecture_id = params[:lecture_id].to_i + 1
+      puts @lecture_id
+      @lecture = Lecture.where(id: @lecture_id, course_id: @course_id, lesson_id: @lesson_id)
+    end
+
 
     @answer = @lecture.quizAnswers
     @options = @lecture.quizOptions.split("-")
@@ -22,7 +30,7 @@ class LecturesController < ApplicationController
     #course_id_next = params[:course_id]
     #lesson_id_next = params[:lesson_id].to_i
     lecture_id_next = params[:lecture_id].to_i+ 1
-    @next = {controller: "lectures", action: "do_lecture", course_id: @course_id, lesson_id: @lesson_id, lecture_id: lecture_id_next}
+    #@next = {controller: "lectures", action: "do_lecture", course_id: @course_id, lesson_id: @lesson_id, lecture_id: lecture_id_next}
   end
 
   def view_lectures
