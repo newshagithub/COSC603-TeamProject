@@ -1,6 +1,7 @@
 class LecturesController < ApplicationController
   before_action :set_lecture, only: [:show, :edit, :update, :destroy]
 
+
   # GET /lectures Student View
   def do_lecture
     @course = Course.find_by_id(params[:course_id])
@@ -8,6 +9,7 @@ class LecturesController < ApplicationController
     @lectures = Lecture.find_by_course_id(params[:course_id])
     @course_id = params[:course_id]
     @lesson_id = params[:id]
+    @counter = params[:counter].to_i
     #@lecture_id = params[:lecture_id]
 
     #@lesson = Lesson.where(course_id: params[:course_id]).first
@@ -26,14 +28,16 @@ class LecturesController < ApplicationController
 
     if(@lecture_id == nil)
       @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).first
+      @counter = 0
     elsif(Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id).blank?)
       flash[:notice] = 'Lesson: '+@lesson.name+' was successfully completed.'
       redirect_to :controller=> 'users', :action => 'overview'
       return
     else
       #@lecture_id = params[:lecture_id].to_i + 1
-      puts @lecture_id
+      @counter += 1
       @lecture = Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id)
+
     end
 
 
@@ -46,6 +50,8 @@ class LecturesController < ApplicationController
     lecture_id_next = params[:lecture_id].to_i+ 1
     #@next = {controller: "lectures", action: "do_lecture", course_id: @course_id, lesson_id: @lesson_id, lecture_id: lecture_id_next}
   end
+
+
 
   def view_lectures
     #@course = Course.where(params[:course_id])

@@ -50258,3 +50258,1473 @@ Processing by UsersController#overview as HTML
   [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"
   Rendered users/overview.html.erb within layouts/application (3.7ms)
 Completed 200 OK in 82ms (Views: 80.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/lessons/view_lessons?course_id=2&lecture_id=1&lesson_id=1" for 127.0.0.1 at 2016-05-07 22:58:05 -0400
+Processing by LessonsController#view_lessons as HTML
+  Parameters: {"course_id"=>"2", "lecture_id"=>"1", "lesson_id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons" WHERE "lessons"."course_id" = $1  [["course_id", 2]]
+  Rendered lessons/view_lessons.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 79ms (Views: 77.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/lectures/do_lecture?course_id=2&id=2" for 127.0.0.1 at 2016-05-07 22:58:07 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"2", "id"=>"2"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 2], ["lesson_id", 2]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1  [["course_id", 2], ["lesson_id", 2]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 73ms (Views: 69.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/lectures/do_lecture?course_id=2&id=2&lecture_id=9" for 127.0.0.1 at 2016-05-07 22:58:09 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"2", "id"=>"2", "lecture_id"=>"9"}
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 2], ["lesson_id", 2]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 10], ["course_id", 2], ["lesson_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 10], ["course_id", "2"], ["lesson_id", "2"]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 78ms (Views: 73.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/lectures/do_lecture?course_id=2&id=2&lecture_id=10" for 127.0.0.1 at 2016-05-07 22:58:10 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"2", "id"=>"2", "lecture_id"=>"10"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 2], ["lesson_id", 2]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 11], ["course_id", 2], ["lesson_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 11], ["course_id", "2"], ["lesson_id", "2"]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 84ms (Views: 79.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/lectures/do_lecture?course_id=2&id=2&lecture_id=11" for 127.0.0.1 at 2016-05-07 22:58:11 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"2", "id"=>"2", "lecture_id"=>"11"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mLesson Load (0.3ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mLecture Load (0.3ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 2], ["lesson_id", 2]]
+  [1m[35mLecture Load (0.3ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 12], ["course_id", 2], ["lesson_id", 2]]
+Redirected to http://0.0.0.0:3000/users/overview
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/overview" for 127.0.0.1 at 2016-05-07 22:58:11 -0400
+Processing by UsersController#overview as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered users/overview.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 123ms (Views: 122.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/lessons/view_lessons?course_id=1&lecture_id=1&lesson_id=1" for 127.0.0.1 at 2016-05-07 23:00:57 -0400
+Processing by LessonsController#view_lessons as HTML
+  Parameters: {"course_id"=>"1", "lecture_id"=>"1", "lesson_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons" WHERE "lessons"."course_id" = $1  [["course_id", 1]]
+  Rendered lessons/view_lessons.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 111ms (Views: 93.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:00:58 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1  [["course_id", 1], ["lesson_id", 1]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 2.2ms)
+
+ActionView::Template::Error (uninitialized class variable @@counter in ActionView::CompiledTemplates
+Did you mean?  concern):
+    12: </dl>
+    13: <dl class="dl-horizontal">
+    14:   <dt><strong><%= model_class.human_attribute_name('progress') %>:</strong></dt>
+    15:   <dd><%= 100*(@@counter)/ @totalLectures.to_i%>%</dd>
+    16: </dl>
+    17: <div class="progress">
+    18:   <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+  app/views/lectures/do_lecture.html.erb:15:in `_app_views_lectures_do_lecture_html_erb___2204123982958550749_70178501842120'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (100.1ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:00:59 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.2ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.2ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1[0m  [["course_id", 1], ["lesson_id", 1]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (uninitialized class variable @@counter in ActionView::CompiledTemplates
+Did you mean?  concern):
+    12: </dl>
+    13: <dl class="dl-horizontal">
+    14:   <dt><strong><%= model_class.human_attribute_name('progress') %>:</strong></dt>
+    15:   <dd><%= 100*(@@counter)/ @totalLectures.to_i%>%</dd>
+    16: </dl>
+    17: <div class="progress">
+    18:   <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+  app/views/lectures/do_lecture.html.erb:15:in `_app_views_lectures_do_lecture_html_erb___2204123982958550749_70178468968800'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (105.9ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:02:42 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1  [["course_id", 1], ["lesson_id", 1]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 185ms (Views: 145.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:02:44 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 2], ["course_id", "1"], ["lesson_id", "1"]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (113.6ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:02:44 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 2], ["course_id", "1"], ["lesson_id", "1"]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (107.3ms)
+
+
+Started GET "/users/overview" for 127.0.0.1 at 2016-05-07 23:04:09 -0400
+Processing by UsersController#overview as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"[0m
+  Rendered users/overview.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 99ms (Views: 93.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/lessons/view_lessons?course_id=1&lecture_id=1&lesson_id=1" for 127.0.0.1 at 2016-05-07 23:04:11 -0400
+Processing by LessonsController#view_lessons as HTML
+  Parameters: {"course_id"=>"1", "lecture_id"=>"1", "lesson_id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons" WHERE "lessons"."course_id" = $1[0m  [["course_id", 1]]
+  Rendered lessons/view_lessons.html.erb within layouts/application (7.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 93ms (Views: 84.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:04:13 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.2ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.2ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1[0m  [["course_id", 1], ["lesson_id", 1]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 138ms (Views: 124.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:04:16 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.3ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.8ms)
+
+TypeError (no implicit conversion of Fixnum into String):
+  app/controllers/lectures_controller.rb:36:in `+'
+  app/controllers/lectures_controller.rb:36:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (106.6ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:04:16 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+TypeError (no implicit conversion of Fixnum into String):
+  app/controllers/lectures_controller.rb:36:in `+'
+  app/controllers/lectures_controller.rb:36:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (106.3ms)
+
+
+Started GET "/users/overview" for 127.0.0.1 at 2016-05-07 23:04:50 -0400
+Processing by UsersController#overview as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered users/overview.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 94ms (Views: 88.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/lessons/view_lessons?course_id=1&lecture_id=1&lesson_id=1" for 127.0.0.1 at 2016-05-07 23:04:52 -0400
+Processing by LessonsController#view_lessons as HTML
+  Parameters: {"course_id"=>"1", "lecture_id"=>"1", "lesson_id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons" WHERE "lessons"."course_id" = $1  [["course_id", 1]]
+  Rendered lessons/view_lessons.html.erb within layouts/application (6.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 94ms (Views: 84.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:04:53 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1  [["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `to_i=' for nil:NilClass
+Did you mean?  to_i
+               to_r
+               to_h
+               to_a
+               to_c
+               to_s
+               to_f):
+  app/controllers/lectures_controller.rb:29:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (90.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (147.4ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:04:53 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1[0m  [["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `to_i=' for nil:NilClass
+Did you mean?  to_i
+               to_r
+               to_h
+               to_a
+               to_c
+               to_s
+               to_f):
+  app/controllers/lectures_controller.rb:29:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (102.1ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:05:48 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1  [["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 4.6ms)
+
+NameError (uninitialized class variable @@counter in LecturesController
+Did you mean?  concern):
+  app/controllers/lectures_controller.rb:29:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (98.2ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:05:49 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.2ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1[0m  [["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.7ms)
+
+NameError (uninitialized class variable @@counter in LecturesController
+Did you mean?  concern):
+  app/controllers/lectures_controller.rb:29:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.5ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (110.9ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:06:29 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1  [["course_id", 1], ["lesson_id", 1]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (9.6ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 4.6ms)
+
+ActionView::Template::Error (uninitialized class variable @@counter in ActionView::CompiledTemplates
+Did you mean?  concern):
+    12: </dl>
+    13: <dl class="dl-horizontal">
+    14:   <dt><strong><%= model_class.human_attribute_name('progress') %>:</strong></dt>
+    15:   <dd><%= 100*(@@counter)/ @totalLectures.to_i%>%</dd>
+    16: </dl>
+    17: <div class="progress">
+    18:   <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+  app/views/lectures/do_lecture.html.erb:15:in `_app_views_lectures_do_lecture_html_erb___2204123982958550749_70178393706440'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (62.5ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (49.6ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (101.1ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:06:29 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1[0m  [["course_id", 1], ["lesson_id", 1]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (uninitialized class variable @@counter in ActionView::CompiledTemplates
+Did you mean?  concern):
+    12: </dl>
+    13: <dl class="dl-horizontal">
+    14:   <dt><strong><%= model_class.human_attribute_name('progress') %>:</strong></dt>
+    15:   <dd><%= 100*(@@counter)/ @totalLectures.to_i%>%</dd>
+    16: </dl>
+    17: <div class="progress">
+    18:   <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+  app/views/lectures/do_lecture.html.erb:15:in `_app_views_lectures_do_lecture_html_erb___2204123982958550749_70178495201080'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (102.2ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:06:44 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1  [["course_id", 1], ["lesson_id", 1]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 4.3ms)
+
+ActionView::Template::Error (uninitialized class variable @@counter in ActionView::CompiledTemplates
+Did you mean?  concern):
+    12: </dl>
+    13: <dl class="dl-horizontal">
+    14:   <dt><strong><%= model_class.human_attribute_name('progress') %>:</strong></dt>
+    15:   <dd><%= 100*(@@counter)/ @totalLectures.to_i%>%</dd>
+    16: </dl>
+    17: <div class="progress">
+    18:   <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+  app/views/lectures/do_lecture.html.erb:15:in `_app_views_lectures_do_lecture_html_erb___2204123982958550749_70178393706440'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (65.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (104.5ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:06:44 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1[0m  [["course_id", 1], ["lesson_id", 1]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (uninitialized class variable @@counter in ActionView::CompiledTemplates
+Did you mean?  concern):
+    12: </dl>
+    13: <dl class="dl-horizontal">
+    14:   <dt><strong><%= model_class.human_attribute_name('progress') %>:</strong></dt>
+    15:   <dd><%= 100*(@@counter)/ @totalLectures.to_i%>%</dd>
+    16: </dl>
+    17: <div class="progress">
+    18:   <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+  app/views/lectures/do_lecture.html.erb:15:in `_app_views_lectures_do_lecture_html_erb___2204123982958550749_70178495201080'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.6ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (110.7ms)
+
+
+Started GET "/users/overview" for 127.0.0.1 at 2016-05-07 23:09:01 -0400
+Processing by UsersController#overview as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"[0m
+  Rendered users/overview.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 101ms (Views: 93.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/lessons/view_lessons?course_id=1&lecture_id=1&lesson_id=1" for 127.0.0.1 at 2016-05-07 23:09:04 -0400
+Processing by LessonsController#view_lessons as HTML
+  Parameters: {"course_id"=>"1", "lecture_id"=>"1", "lesson_id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons" WHERE "lessons"."course_id" = $1[0m  [["course_id", 1]]
+  Rendered lessons/view_lessons.html.erb within layouts/application (5.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 79ms (Views: 73.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:09:05 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.3ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1[0m  [["course_id", 1], ["lesson_id", 1]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 91ms (Views: 75.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:09:06 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.2ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+TypeError (no implicit conversion of Fixnum into String):
+  app/controllers/lectures_controller.rb:38:in `+'
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (102.0ms)
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:09:07 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+TypeError (no implicit conversion of Fixnum into String):
+  app/controllers/lectures_controller.rb:38:in `+'
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (102.2ms)
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:09:43 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.2ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.8ms)
+
+TypeError (no implicit conversion of Fixnum into String):
+  app/controllers/lectures_controller.rb:38:in `+'
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (102.1ms)
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:09:44 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms)
+
+TypeError (no implicit conversion of Fixnum into String):
+  app/controllers/lectures_controller.rb:38:in `+'
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.5ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (51.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (110.3ms)
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:09:58 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.2ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 4.3ms)
+
+TypeError (no implicit conversion of Fixnum into String):
+  app/controllers/lectures_controller.rb:38:in `+'
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (103.3ms)
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:10:14 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.1ms)
+
+NoMethodError (undefined method `to_i=' for "0":String
+Did you mean?  to_i
+               to_time
+               to_d
+               to_f
+               to_c
+               to_s
+               to_r):
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.5ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (106.5ms)
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:10:15 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `to_i=' for "0":String
+Did you mean?  to_i
+               to_time
+               to_d
+               to_f
+               to_c
+               to_s
+               to_r):
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.5ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (2.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (116.3ms)
+
+
+Started GET "/users/overview" for 127.0.0.1 at 2016-05-07 23:13:46 -0400
+Processing by UsersController#overview as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"[0m
+  Rendered users/overview.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 159ms (Views: 146.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/lessons/view_lessons?course_id=2&lecture_id=1&lesson_id=1" for 127.0.0.1 at 2016-05-07 23:13:48 -0400
+Processing by LessonsController#view_lessons as HTML
+  Parameters: {"course_id"=>"2", "lecture_id"=>"1", "lesson_id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT "lessons".* FROM "lessons" WHERE "lessons"."course_id" = $1[0m  [["course_id", 2]]
+  Rendered lessons/view_lessons.html.erb within layouts/application (9.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 156ms (Views: 146.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/lessons/view_lessons?course_id=1&lecture_id=1&lesson_id=1" for 127.0.0.1 at 2016-05-07 23:13:51 -0400
+Processing by LessonsController#view_lessons as HTML
+  Parameters: {"course_id"=>"1", "lecture_id"=>"1", "lesson_id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons" WHERE "lessons"."course_id" = $1  [["course_id", 1]]
+  Rendered lessons/view_lessons.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 86ms (Views: 83.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:13:52 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1  [["course_id", 1], ["lesson_id", 1]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 99ms (Views: 82.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:13:53 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `increment' for "0":String
+Did you mean?  indent):
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (110.1ms)
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:13:54 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.2ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.2ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.8ms)
+
+NoMethodError (undefined method `increment' for "0":String
+Did you mean?  indent):
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (97.1ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:14:44 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.2ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1  [["course_id", 1], ["lesson_id", 1]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 131ms (Views: 93.9ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/lessons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/lectures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/main.self-47adb9e2dc7fc49f7a60a2b2a12f7156415b70e04a911e25148f7c00a05c2b9f.css?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/scaffolds.self-01cfe81d936ed46f834559a5d77e66ddea3e38d61bdfe94dff33c96ef0bb8a93.css?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/lectures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/lessons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-05-07 23:14:45 -0400
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:14:46 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `increment' for 0:Fixnum):
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.2ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (52.4ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (109.9ms)
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:14:47 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.7ms)
+
+NoMethodError (undefined method `increment' for 0:Fixnum):
+  app/controllers/lectures_controller.rb:38:in `do_lecture'
+
+
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.9ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /rehakjc.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (98.0ms)
+
+
+Started GET "/lectures/do_lecture?course_id=1&id=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"1", "id"=>"1"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1  [["course_id", 1], ["lesson_id", 1]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 133ms (Views: 94.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/lectures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/lessons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/main.self-47adb9e2dc7fc49f7a60a2b2a12f7156415b70e04a911e25148f7c00a05c2b9f.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/scaffolds.self-01cfe81d936ed46f834559a5d77e66ddea3e38d61bdfe94dff33c96ef0bb8a93.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:00 -0400
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:01 -0400
+
+
+Started GET "/assets/lectures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:01 -0400
+
+
+Started GET "/assets/lessons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:01 -0400
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:01 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:01 -0400
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=1&id=1&lecture_id=1" for 127.0.0.1 at 2016-05-07 23:15:02 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"1", "id"=>"1", "lecture_id"=>"1"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 2], ["course_id", 1], ["lesson_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 2], ["course_id", "1"], ["lesson_id", "1"]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 73ms (Views: 69.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/lectures/do_lecture?counter=1&course_id=1&id=1&lecture_id=2" for 127.0.0.1 at 2016-05-07 23:15:04 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"1", "course_id"=>"1", "id"=>"1", "lecture_id"=>"2"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 3], ["course_id", 1], ["lesson_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 3], ["course_id", "1"], ["lesson_id", "1"]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 76ms (Views: 72.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lectures/do_lecture?counter=2&course_id=1&id=1&lecture_id=3" for 127.0.0.1 at 2016-05-07 23:15:05 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"2", "course_id"=>"1", "id"=>"1", "lecture_id"=>"3"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 4], ["course_id", 1], ["lesson_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 4], ["course_id", "1"], ["lesson_id", "1"]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 81ms (Views: 76.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lectures/do_lecture?counter=3&course_id=1&id=1&lecture_id=4" for 127.0.0.1 at 2016-05-07 23:15:06 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"3", "course_id"=>"1", "id"=>"1", "lecture_id"=>"4"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLesson Load (0.1ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 1], ["lesson_id", 1]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 5], ["course_id", 1], ["lesson_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 5], ["course_id", "1"], ["lesson_id", "1"]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 81ms (Views: 77.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/lectures/do_lecture?counter=4&course_id=1&id=1&lecture_id=5" for 127.0.0.1 at 2016-05-07 23:15:08 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"4", "course_id"=>"1", "id"=>"1", "lecture_id"=>"5"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 1], ["lesson_id", 1]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 6], ["course_id", 1], ["lesson_id", 1]]
+Redirected to http://0.0.0.0:3000/users/overview
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/overview" for 127.0.0.1 at 2016-05-07 23:15:08 -0400
+Processing by UsersController#overview as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered users/overview.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 83ms (Views: 82.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/overview" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+Processing by UsersController#overview as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered users/overview.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 78ms (Views: 76.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/lessons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/courses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/lectures.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/main.self-47adb9e2dc7fc49f7a60a2b2a12f7156415b70e04a911e25148f7c00a05c2b9f.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/scaffolds.self-01cfe81d936ed46f834559a5d77e66ddea3e38d61bdfe94dff33c96ef0bb8a93.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/courses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/lectures.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/lessons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/main.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-05-07 23:15:40 -0400
+
+
+Started GET "/lessons/view_lessons?course_id=2&lecture_id=1&lesson_id=1" for 127.0.0.1 at 2016-05-07 23:15:42 -0400
+Processing by LessonsController#view_lessons as HTML
+  Parameters: {"course_id"=>"2", "lecture_id"=>"1", "lesson_id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT "lessons".* FROM "lessons" WHERE "lessons"."course_id" = $1  [["course_id", 2]]
+  Rendered lessons/view_lessons.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 75ms (Views: 72.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/lectures/do_lecture?course_id=2&id=2" for 127.0.0.1 at 2016-05-07 23:15:43 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"course_id"=>"2", "id"=>"2"}
+  [1m[35mCourse Load (0.1ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 2], ["lesson_id", 2]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  ORDER BY "lectures"."id" ASC LIMIT 1  [["course_id", 2], ["lesson_id", 2]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 79ms (Views: 75.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lectures/do_lecture?counter=0&course_id=2&id=2&lecture_id=9" for 127.0.0.1 at 2016-05-07 23:15:44 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"0", "course_id"=>"2", "id"=>"2", "lecture_id"=>"9"}
+  [1m[35mCourse Load (0.2ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 2], ["lesson_id", 2]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 10], ["course_id", 2], ["lesson_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 10], ["course_id", "2"], ["lesson_id", "2"]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 75ms (Views: 71.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/lectures/do_lecture?counter=1&course_id=2&id=2&lecture_id=10" for 127.0.0.1 at 2016-05-07 23:15:45 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"1", "course_id"=>"2", "id"=>"2", "lecture_id"=>"10"}
+  [1m[36mCourse Load (0.2ms)[0m  [1mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mLesson Load (0.2ms)[0m  SELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1[0m  [["course_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2  [["course_id", 2], ["lesson_id", 2]]
+  [1m[36mLecture Load (0.1ms)[0m  [1mSELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1[0m  [["id", 11], ["course_id", 2], ["lesson_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 11], ["course_id", "2"], ["lesson_id", "2"]]
+  Rendered lectures/do_lecture.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 75ms (Views: 71.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/lectures/do_lecture?counter=2&course_id=2&id=2&lecture_id=11" for 127.0.0.1 at 2016-05-07 23:15:47 -0400
+Processing by LecturesController#do_lecture as HTML
+  Parameters: {"counter"=>"2", "course_id"=>"2", "id"=>"2", "lecture_id"=>"11"}
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mLesson Load (0.1ms)[0m  [1mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mLecture Load (0.2ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."course_id" = $1 LIMIT 1  [["course_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "lectures" WHERE "lectures"."course_id" = $1 AND "lectures"."lesson_id" = $2[0m  [["course_id", 2], ["lesson_id", 2]]
+  [1m[35mLecture Load (0.1ms)[0m  SELECT  "lectures".* FROM "lectures" WHERE "lectures"."id" = $1 AND "lectures"."course_id" = $2 AND "lectures"."lesson_id" = $3 LIMIT 1  [["id", 12], ["course_id", 2], ["lesson_id", 2]]
+Redirected to http://0.0.0.0:3000/users/overview
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/overview" for 127.0.0.1 at 2016-05-07 23:15:47 -0400
+Processing by UsersController#overview as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCourse Load (0.2ms)[0m  SELECT "courses".* FROM "courses"
+  Rendered users/overview.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 81ms (Views: 79.6ms | ActiveRecord: 0.4ms)
