@@ -16,7 +16,12 @@ class LecturesController < ApplicationController
     @totalLectures = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).count
     # @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).select(:id)
 
-    @lecture_id = params[:lecture_id].to_i + 1
+    if(@lecture_id == nil)
+      @lecture_id = nil
+    else
+      @lecture_id = params[:lecture_id].to_i + 1
+    end
+
     puts @lecture_id
 
     if(@lecture_id == nil)
