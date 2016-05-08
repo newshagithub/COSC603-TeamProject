@@ -22,7 +22,8 @@ class LecturesController < ApplicationController
     if(@lecture_id == nil)
       @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).first
     elsif(Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id).blank?)
-      redirect_to :controller=> 'users', :action => 'overview', notice: 'Lesson was successfully completed.'
+      flash[:notice] = 'Lesson: '+@lesson.name+' was successfully completed.'
+      redirect_to :controller=> 'users', :action => 'overview'
       return
     else
       #@lecture_id = params[:lecture_id].to_i + 1
