@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'lectures/view_lectures'
 
 
-  devise_for :users, controllers: { registrations: 'users/registrations', callbacks: 'users/callbacks'}
+  devise_for :users, controllers: { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks'}
   resources :lectures
   resources :lessons
   resources :courses
