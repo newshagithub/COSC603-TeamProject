@@ -13,18 +13,25 @@ class LecturesController < ApplicationController
     #@lesson = Lesson.where(course_id: params[:course_id]).first
 
     @lecture_id = params[:lecture_id]
+    @totalLectures = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).count
     # @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).select(:id)
+
+    @lecture_id = params[:lecture_id].to_i + 1
+    puts @lecture_id
 
     if(@lecture_id == nil)
       @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).first
+    elsif(Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id).blank?)
+      redirect_to :controller=> 'users', :action => 'overview', notice: 'Lesson was successfully completed.'
+      return
     else
-      @lecture_id = params[:lecture_id].to_i + 1
+      #@lecture_id = params[:lecture_id].to_i + 1
       puts @lecture_id
-      #@lecture = Lecture.where('id = ? AND course_id = ? AND lesson_id = ?', @lecture_id, @course_id, @lesson_id)
       @lecture = Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id)
     end
 
 
+    puts @totalLectures
     @answer = @lecture.quizAnswers
     @options = @lecture.quizOptions.split("-")
 
