@@ -45,10 +45,16 @@
 <br>
 <br>
 
-<%= link_to t('Exit', {controller: "courses", action: "show", course_id: course.id, lesson_id: , lecture_id: } %>
-            , :class => 'btn btn-default'  %>
-<%= link_to 'Next', @next, :class => 'btn btn-default' %>
-<%# <%= link_to course.name, {controller: "courses", action: "show", course_id: course.id, lesson_id: 1, lecture_id: 1} %>
+<%= link_to 'Exit', 'users/overview', :class => 'btn btn-default'  %>
+
+<%if @course_over %>
+    <%= link_to 'Next', '/users/overview', :onclick => 'alert("Congratulations! You have finished this quiz")',  :class => 'btn btn-default' %>
+<%elsif @lesson_over %>
+    <%= link_to 'Next', @next, :onclick => 'alert("You have finished this lesson!")',  :class => 'btn btn-default' %>
+<%else %>
+    <%= link_to 'Next', @next, :class => 'btn btn-default' %>
+<% end %>
+
 
 <script type="text/javascript">
   function hideshow(which){

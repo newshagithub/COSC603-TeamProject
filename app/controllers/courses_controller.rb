@@ -4,36 +4,60 @@ class CoursesController < ApplicationController
   # GET /course student selected
   def do_course
 
-    # check if this is the user has answered all questions
-
+    # set a couple of variables with the params object
     @course = Course.find_by_id(params[:course_id])
     @lectures = Lecture.find_by_course_id(params[:course_id])
     @course_id = params[:course_id]
     @lesson_id = params[:lesson_id]
 
+    # -------check if course is over
+    first_id_in_course = Lecture.select(:id).where(course_id: @course_id).first
+    last_id_in_course = Lecture.select(:id).where(course_id: @course_id).last
 
-    @lesson = Lesson.where(course_id: params[:course_id]).first
-
+    # -------check if lesson is over
     # get first and last lecture of this lesson for traversing the quiz
-    id_first = Lecture.select(:id).where(course_id: @course_id, lesson_id: @lesson_id).first
-    id_last = Lecture.select(:id).where(course_id: @course_id, lesson_id: @lesson_id).last
+    first_id_in_lesson = Lecture.select(:id).where(course_id: @course_id, lesson_id: @lesson_id).first
+    last_id_in_lesson = Lecture.select(:id).where(course_id: @course_id, lesson_id: @lesson_id).last
 
     # this is the id of the current lecture
-    lecture_id = id_first.id.to_i + params[:lecture_id].to_i - 1
+    lecture_id = first_id_in_lesson.id.to_i + params[:lecture_id].to_i - 1
 
+    # is the course over? => set the flag accordingly
+    if lecture_id == last_id_in_course.id.to_i
+      @course_over = true
+    else
+      @course_over = false
+    end
+
+    # is the lesson over? => set the flag accordingly
+    if lecture_id == last_id_in_lesson.id.to_i
+       @lesson_over = true
+    else
+      @lesson_over = false
+    end
+
+    # retrieve the lesson and the quiz content
+    @lesson = Lesson.where(course_id: params[:course_id]).first
     @lecture = Lecture.find(lecture_id)
-
     @answer = @lecture.quizAnswers
     @options = @lecture.quizOptions.split("-")
 
-    # percentage of the quiz the user has already taken
-    @progress = 100.*(lecture_id.to_f - id_first.id.to_f)/(id_last.id.to_f - id_first.id.to_f)
+    # percentage of the lesson the user has already taken
+    @progress = 100.*(lecture_id.to_f - first_id_in_lesson.id.to_f)/(last_id_in_lesson.id.to_f - first_id_in_lesson.id.to_f)
 
     # these are the course, lesson and lecture ids for the next question
-    course_id_next = params[:course_id]
-    lesson_id_next = params[:lesson_id]
-    lecture_id_next = params[:lecture_id].to_i + 1
-    @next = {controller: "courses", action: "do_course", course_id: course_id_next, lesson_id: lesson_id_next, lecture_id: lecture_id_next}
+    if @lesson_over
+      course_id_next = params[:course_id]
+      lesson_id_next = params[:lesson_id].to_i + 1
+      lecture_id_next =  1
+      @next = {controller: "courses", action: "do_course", course_id: course_id_next, lesson_id: lesson_id_next, lecture_id: lecture_id_next}
+    else
+      course_id_next = params[:course_id]
+      lesson_id_next = params[:lesson_id]
+      lecture_id_next = params[:lecture_id].to_i + 1
+      @next = {controller: "courses", action: "do_course", course_id: course_id_next, lesson_id: lesson_id_next, lecture_id: lecture_id_next}
+    end
+
   end
 
   def view_courses
