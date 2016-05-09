@@ -4,68 +4,50 @@ class LecturesController < ApplicationController
 
   # GET /lectures Student View
   def do_lecture
+    #set the parameters
     @course = Course.find_by_id(params[:course_id])
     @lesson = Lesson.find_by_id(params[:id])
     @lectures = Lecture.find_by_course_id(params[:course_id])
     @course_id = params[:course_id]
     @lesson_id = params[:id]
-    @counter = params[:counter].to_i
-    #@lecture_id = params[:lecture_id]
-
-    #@lesson = Lesson.where(course_id: params[:course_id]).first
-
     @lecture_id = params[:lecture_id]
+
+    #for progress bar
+    @counter = params[:counter].to_i
     @totalLectures = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).count
+
+    #@lecture_id = params[:lecture_id]
+    #@lesson = Lesson.where(course_id: params[:course_id]).first
     # @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).select(:id)
 
+    #check first and increment lecture
     if(@lecture_id == nil)
       @lecture_id = nil
     else
       @lecture_id = params[:lecture_id].to_i + 1
     end
 
-    puts @lecture_id
-
-    if(@lecture_id == nil)
+    #set lecture to be shown
+    if(@lecture_id == nil) #first lecture
       @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).first
       @counter = 0
-    elsif(Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id).blank?)
+    elsif(Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id).blank?) #last lecture
       flash[:notice] = 'Lesson: '+@lesson.name+' was successfully completed.'
       redirect_to :controller=> 'users', :action => 'overview'
       return
-    else
-      #@lecture_id = params[:lecture_id].to_i + 1
+    else #middle lecture
       @counter += 1
       @lecture = Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id)
-
     end
 
-
-    puts @totalLectures
+    #set quizzes once right lecture found
     @answer = @lecture.quizAnswers
     @options = @lecture.quizOptions.split("-")
-
-    #course_id_next = params[:course_id]
-    #lesson_id_next = params[:lesson_id].to_i
-    lecture_id_next = params[:lecture_id].to_i+ 1
-    #@next = {controller: "lectures", action: "do_lecture", course_id: @course_id, lesson_id: @lesson_id, lecture_id: lecture_id_next}
   end
 
-
-
+  # GET /Lectures student view
   def view_lectures
-    #@course = Course.where(params[:course_id])
-    #@lesson_id = params[:lesson_id]
-    #@lesson = Lesson.where(course_id: params[:course_id]).first
-
-    #@lecture_id = params[:lecture_id]
-    #@lecture = Lecture.where(lesson_id: @lesson_id).first
-
-    #@course_id = params[:id]
-    #@course = Course.find(@course_id)
-    #@lessons = Lesson.where(course_id: @course_id)
     @course_id = params[:course_id]
-
     @lesson_id = params[:id]
     @lesson = Lesson.find(@lesson_id)
     @lectures = Lecture.where(lesson_id: @lesson_id, course_id: @course_id)
