@@ -3,24 +3,36 @@ class CoursesController < ApplicationController
 
   # GET /course student selected
   def do_course
+
+    # check if this is the user has answered all questions
+
     @course = Course.find_by_id(params[:course_id])
     @lectures = Lecture.find_by_course_id(params[:course_id])
     @course_id = params[:course_id]
     @lesson_id = params[:lesson_id]
-    @lecture_id = params[:lecture_id]
+
 
     @lesson = Lesson.where(course_id: params[:course_id]).first
 
-    @lecture_id = params[:lecture_id]
-    # @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).select(:id)
-    @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).first
+    # get first and last lecture of this lesson for traversing the quiz
+    id_first = Lecture.select(:id).where(course_id: @course_id, lesson_id: @lesson_id).first
+    id_last = Lecture.select(:id).where(course_id: @course_id, lesson_id: @lesson_id).last
+
+    # this is the id of the current lecture
+    lecture_id = id_first.id.to_i + params[:lecture_id].to_i - 1
+
+    @lecture = Lecture.find(lecture_id)
 
     @answer = @lecture.quizAnswers
     @options = @lecture.quizOptions.split("-")
 
+    # percentage of the quiz the user has already taken
+    @progress = 100.*(lecture_id.to_f - id_first.id.to_f)/(id_last.id.to_f - id_first.id.to_f)
+
+    # these are the course, lesson and lecture ids for the next question
     course_id_next = params[:course_id]
-    lesson_id_next = params[:lesson_id].to_i
-    lecture_id_next = params[:lecture_id].to_i+ 1
+    lesson_id_next = params[:lesson_id]
+    lecture_id_next = params[:lecture_id].to_i + 1
     @next = {controller: "courses", action: "do_course", course_id: course_id_next, lesson_id: lesson_id_next, lecture_id: lecture_id_next}
   end
 

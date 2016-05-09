@@ -3,14 +3,13 @@
   <h1><%=@course.name %></h1>
 </div>
 
-
 <dl class="dl-horizontal">
   <dt><strong>Lesson: <%= @lesson_id %>:</strong></dt>
   <dd></dd>
 </dl>
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:progress) %>:</strong></dt>
-  <dd><%= 100*(@lesson_id.to_f - 1)/5  %>%</dd>
+  <dd><%= @progress %>&#37;</dd>
 </dl>
 
 <br>
@@ -23,7 +22,7 @@
   <label><%=@lecture.quizQuestions %></label>
 </div>
 
-<div id="answers">
+<div>
   <% @options.each do |option| %>
 
       <%= radio_button_tag 'option', option %> <%= option%>
@@ -33,17 +32,10 @@
 
 <br>
 
-<a href="javascript:hideshow(document.getElementById('reading') )">Need a hint?</a><br>
 <a href="javascript:checkAnswer()" class="btn btn-primary">Check your answer!</a>
+<br>
+<a href="javascript:hideshow(document.getElementById('reading') )">Need a hint?</a><br>
 
-
-<div id="correctAnswer", style="display:none">
-  <p>Great Job!</p>
-</div>
-
-<div id="wrongAnswer", style="display:none">
-  <p>Try again!</p>
-</div>
 
 <div id="reading", style="display:none">
   <p><%=@lecture.reading %></p>
@@ -53,26 +45,28 @@
 <br>
 <br>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-            courses_path, :class => 'btn btn-default'  %>
+<%= link_to t('Exit', {controller: "courses", action: "show", course_id: course.id, lesson_id: , lecture_id: } %>
+            , :class => 'btn btn-default'  %>
 <%= link_to 'Next', @next, :class => 'btn btn-default' %>
 <%# <%= link_to course.name, {controller: "courses", action: "show", course_id: course.id, lesson_id: 1, lecture_id: 1} %>
 
 <script type="text/javascript">
   function hideshow(which){
     if (!document.getElementById)
-      return
+      return;
     if (which.style.display=="block")
-      which.style.display="none"
+      which.style.display="none";
     else
-      which.style.display="block"
+      which.style.display="block";
   }
 </script>
 
 <script type="text/javascript">
   function checkAnswer() {
 
-    if (document.getElementById("option_Yes").checked == true) {
+    var correct_answer = "option_" + "<%= @answer %>";
+
+    if (document.getElementById(correct_answer).checked == true) {
       alert("Good job!");
     } else {
       alert("Try again!");
