@@ -7,7 +7,10 @@ class UsersController < ApplicationController
     #@current_user ||= User.find(session[:user_id])
 
     @courses=Course.all
-    self.saveProgress(params)
+
+    if !params[:save].nil?
+       self.saveProgress(params)
+    end
 
   end
 
@@ -18,7 +21,6 @@ class UsersController < ApplicationController
     Progress.create!(user_id: params[:user_id], course_id: params[:course_id], lesson_id: params[:lesson_id],
                     lecture_id: params[:lecture_id])
     else
-      #record_to_update.update(course_id: 1)
       record_to_update.update(course_id: params[:course_id], lesson_id: params[:lesson_id],
                              lecture_id: params[:lecture_id])
     end
