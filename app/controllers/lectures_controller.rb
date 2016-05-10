@@ -59,12 +59,13 @@ class LecturesController < ApplicationController
     @answer = @lecture.quizAnswers
     @options = @lecture.quizOptions.split("-")
 
-    if(@option == @answer)
+    if(@option.to_s == @answer.to_s)
+      #save prgress goes here
       #success
       redirect_to :action => 'do_lecture', course_id: @course_id, id: @lesson_id, lecture_id: @lecture_id, counter: @counter
     else
       #failure prevent incremet
-      flash[:notice] = 'Wrong Answer, try again'
+      flash[:alert] = 'Wrong Answer, try again'
       redirect_to :action => 'do_lecture', course_id: @course_id, id: @lesson_id, lecture_id: @lecture_id.to_i-1, counter: @counter.to_i-1
     end
 
