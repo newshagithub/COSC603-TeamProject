@@ -1,3 +1,5 @@
+
+
 <%- model_class = Lecture -%>
 <div class="page-header">
   <h1><%=@course.name %></h1>
@@ -27,13 +29,26 @@
   <label><%=@lecture.quizQuestions %></label>
 </div>
 
+<% if false %>
 <div id="answers">
   <% @options.each do |option| %>
-
       <%= radio_button_tag 'option', option %> <%= option%>
       <br />
   <%end %>
 </div>
+<%end%>
+
+
+
+  <% @options.each do |option| %>
+    <div class = "radio_button">
+      <label><input type="radio" name = "radio_button", value="option" > <%= option %></label>
+    </div>
+        <%= link_to 'Next Answer', {controller: "lectures", action: "grade_lecture", course_id: @course.id, id: @lesson.id,
+                                            lecture_id: @lecture.id, counter: @counter, option: option}, :class => 'btn btn-default' %>
+
+  <%end%>
+
 
 <br>
 
@@ -59,8 +74,12 @@
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
             :back, :class => 'btn btn-default'  %>
-<%= link_to 'Next', {controller: "lectures", action: "do_lecture", course_id: @course.id, id: @lesson.id, lecture_id: @lecture.id, counter: @counter}, :class => 'btn btn-default' %>
-<%# <%= link_to course.name, {controller: "courses", action: "show", course_id: course.id, lesson_id: 1, lecture_id: 1} %>
+<%= link_to 'Next', {controller: "lectures", action: "do_lecture", course_id: @course.id, id: @lesson.id,
+                     lecture_id: @lecture.id, counter: @counter}, :class => 'btn btn-default' %>
+<%if false%>
+<%= link_to 'Next Answer', {controller: "lectures", action: "grade_lecture", course_id: @course.id, id: @lesson.id,
+                            lecture_id: @lecture.id, counter: @counter}, :submit => @answer, :class => 'btn btn-default' %>
+    <%end%>
 
 <script type="text/javascript">
   function hideshow(which){

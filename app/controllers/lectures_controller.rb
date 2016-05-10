@@ -45,6 +45,31 @@ class LecturesController < ApplicationController
     @options = @lecture.quizOptions.split("-")
   end
 
+  def grade_lecture
+    @course_id = params[:course_id]
+    @lesson_id = params[:id]
+    @lecture_id = params[:lecture_id]
+    @option = params[:option]
+    @counter = params[:counter]
+
+    puts @option
+
+    @lecture = Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id)
+    #set quizzes once right lecture found
+    @answer = @lecture.quizAnswers
+    @options = @lecture.quizOptions.split("-")
+
+    if(@option == @answer)
+      #success
+      redirect_to :action => 'do_lecture', course_id: @course_id, id: @lesson_id, lecture_id: @lecture_id, counter: @counter
+    else
+      #failure prevent incremet
+      flash[:notice] = 'Wrong Answer, try again'
+      redirect_to :action => 'do_lecture', course_id: @course_id, id: @lesson_id, lecture_id: @lecture_id.to_i-1, counter: @counter.to_i-1
+    end
+
+  end
+
   # GET /Lectures student view
   def view_lectures
     @course_id = params[:course_id]
