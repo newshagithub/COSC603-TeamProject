@@ -7,7 +7,11 @@
     <title><%= content_for?(:title) ? yield(:title) : "Finding Black Holes For Dummies" %></title>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag "darklytheme", :media => "all"%>
+
+    <%if false %>
     <%= stylesheet_link_tag "application", :media => "all" %>
+        <%end%>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
