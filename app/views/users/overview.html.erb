@@ -31,7 +31,8 @@
     <ul>
     <% @courses.each do |course|%>
      <li style="font-size: large"><%= link_to course.name, {controller: "courses", action: "do_course", course_id: course.id, lesson_id: 1, lecture_id: 1} %></li>
-    <% end %>
+    <br>
+      <% end %>
     </ul>
   </div>
 <br>

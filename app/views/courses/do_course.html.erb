@@ -45,10 +45,14 @@
 <br>
 <br>
 
-<%= link_to 'Exit', 'users/overview', :class => 'btn btn-default'  %>
+<%= link_to 'Exit', {controller: 'users', action: 'overview', user_id: current_user,
+                     course_id: @course_id, lesson_id: @lesson_id, lecture_id: @lecture_id},
+            :class => 'btn btn-default' %>
 
 <%if @course_over %>
-    <%= link_to 'Next', '/users/overview', :onclick => 'alert("Congratulations! You have finished this quiz")',  :class => 'btn btn-default' %>
+    <%= link_to 'Next', {controller: 'users', action: 'overview', user_id: current_user,
+                         course_id: @course_id, lesson_id: @lesson_id, lecture_id: @lecture_id},
+                :onclick => 'alert("Congratulations! You have finished this quiz")',  :class => 'btn btn-default' %>
 <%elsif @lesson_over %>
     <%= link_to 'Next', @next, :onclick => 'alert("You have finished this lesson!")',  :class => 'btn btn-default' %>
 <%else %>
