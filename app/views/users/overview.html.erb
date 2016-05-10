@@ -21,8 +21,22 @@
 <br>
 <br>
 
+<div>
+  <h4>Course Readings</h4>
+  <ul>
+    <% @courses.each do |course|%>
+        <li style="font-size: large"><%=  course.name %> <%= link_to "Start", {controller: "lessons", action: "view_lessons", course_id: course.id, lesson_id: 1, lecture_id: 1}, {:style => "color:blue;", :class => "btn btn-xs btn-default"} %></li>
+        <br>
+    <% end %>
+  </ul>
+</div>
+
+<br>
+<br>
+<br>
+
   <div>
-    <h4>Start a new lecture</h4>
+    <h4>Test your Knowledge</h4>
     <ul>
     <% @courses.each do |course|%>
      <li style="font-size: large"><%= link_to course.name, {controller: "courses", action: "do_course", course_id: course.id, lesson_id: 1, lecture_id: 1} %></li>
@@ -30,19 +44,6 @@
       <% end %>
     </ul>
   </div>
-<br>
-<br>
-<br>
-<div>
-  <h2>next works! with the ones below:</h2>
-  <h4>Start a new course </h4>
-  <ul>
-    <% @courses.each do |course|%>
-        <li style="font-size: large"><%= link_to course.name, {controller: "lessons", action: "view_lessons", course_id: course.id, lesson_id: 1, lecture_id: 1} %></li>
-    <% end %>
-  </ul>
-</div>
-
 <br>
 <br>
 <br>

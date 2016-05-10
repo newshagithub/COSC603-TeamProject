@@ -32,7 +32,7 @@ class LecturesController < ApplicationController
       @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).first
       @counter = 0
     elsif(Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id).blank?) #last lecture
-      flash[:notice] = 'Lesson: '+@lesson.name+' was successfully completed.'
+      flash[:notice] = 'Lesson: '+@lesson.name+' was successfully read, please take the quiz to test your knowledge.'
       redirect_to :controller=> 'users', :action => 'overview'
       return
     else #middle lecture
