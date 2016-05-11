@@ -55,7 +55,7 @@
             <% if user_signed_in? %>
                 <li><%= image_tag current_user.avatar.url(:thumb), :size => '50x50' %></li>
                 <li><%= link_to 'Welcome ' + current_user.first_name + ' ' + current_user.last_name, users_overview_path %></li>
-                <%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-primary' %>
+               <li> <%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-info' %></li>
             <% else %>
                 <li><%= link_to "You are not signed in.", '#' %></li>
             <li><%= link_to "Login", new_user_session_path, :class => 'btn btn-xs btn-danger', :id => 'loginbutton', :onclick => 'hidelink()'%> </li>

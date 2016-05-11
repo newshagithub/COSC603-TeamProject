@@ -6,12 +6,12 @@
 <br>
 <br>
 
-<div>
-  <h4>My Quizzes</h4>
+<div class="jumbotron">
+  <h3>My Quizzes</h3>
 
   <ul>
     <% @courses.each do |course|%>
-        <li style="font-size: large"><%= course.name %> &nbsp;&nbsp;&nbsp;<%= link_to "Start", {controller: "courses", action: "do_course", course_id: course.id, lesson_id: 1, lecture_id: 1}, {:style => "color:blue;", :class => "btn btn-xs btn-default"} %></li>
+        <li style="font-size: large"><%= course.name %> &nbsp;&nbsp;&nbsp;<%= link_to "Start", {controller: "courses", action: "do_course", course_id: course.id, lesson_id: 1, lecture_id: 1}, {:class => "btn btn-xs btn-default"} %></li>
         <br>
     <% end %>
   </ul>
@@ -21,14 +21,15 @@
 <br>
 <br>
 
-<div>
-  <h4>Course Readings</h4>
-  <ul>
+<div class="panel panel-default">
+  <div class="panel-heading" style="font-size: x-large">Course Readings</div>
+
     <% @courses.each do |course|%>
-        <li style="font-size: large"><%=  course.name %> <%= link_to "Start", {controller: "lessons", action: "view_lessons", course_id: course.id, lesson_id: 1, lecture_id: 1}, {:style => "color:blue;", :class => "btn btn-xs btn-default"} %></li>
-        <br>
+        <div class = "panel-body">
+          <li style="font-size: large"><%=  course.name %> <%= link_to "Start", {controller: "lessons", action: "view_lessons", course_id: course.id, lesson_id: 1, lecture_id: 1}, { :class => "btn btn-xs btn-default"} %></li>
+        </div>
     <% end %>
-  </ul>
+
 </div>
 
 <br>
@@ -36,7 +37,7 @@
 <br>
 
   <div>
-    <h4>Test your Knowledge</h4>
+    <h3>Test your Knowledge</h3>
     <ul>
     <% @courses.each do |course|%>
      <li style="font-size: large"><%= link_to course.name, {controller: "courses", action: "do_course", course_id: course.id, lesson_id: 1, lecture_id: 1} %></li>

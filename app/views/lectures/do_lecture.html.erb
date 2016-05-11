@@ -22,7 +22,7 @@
 
 
 <br>
-<% if false %>
+
 <h4>Quiz for Lesson "<%= @lesson.name %>" - <%= @lecture.name %></h4>
 
 <br>
@@ -33,18 +33,22 @@
 
 
   <% @options.each do |option| %>
+    <%if false%>
     <div class = "radio_button">
       <label><input type="radio" name = "radio_button", value="option" > <%= option %></label>
     </div>
+        <%end%>
 
-    <%= link_to 'Next Answer', {controller: "lectures", action: "grade_lecture", course_id: @course.id, id: @lesson.id,
+    <%= link_to option, {controller: "lectures", action: "grade_lecture", course_id: @course.id, id: @lesson.id,
                                 lecture_id: @lecture.id, counter: @counter, option: option}, :class => 'btn btn-default' %>
+    <br>
+    <br>
 
-  <%end%>
 
+<%end%>
 
 <br>
-
+<%if false%>
 <a href="javascript:hideshow(document.getElementById('reading') )">Need a hint?</a><br>
 <a href="javascript:checkAnswer()" class="btn btn-primary">Check your answer!</a>
 
@@ -60,8 +64,8 @@
 <div id="reading", style="display:none">
   <p><%=@lecture.reading.html_safe %></p>
 </div>
-
 <%end%>
+
 <br>
 <br>
 <br>
