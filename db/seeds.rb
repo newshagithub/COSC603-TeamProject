@@ -8,7 +8,7 @@
 
 #user
 User.create!(first_name: "Homer", last_name: "Simpson", email: "homer@email.com",
-             password: "password", avatar_file_name: "homer.jpeg", avatar_content_type: "image/jpeg" )
+             password: "password", avatar_file_name: "homer.png", avatar_content_type: "image/png" )
 
 # course 1 / lesson 1
 Course.create!(name: %{Black Holes})

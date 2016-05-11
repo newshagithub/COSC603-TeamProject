@@ -16,11 +16,12 @@ class User < ActiveRecord::Base
   has_attached_file :avatar,
                     :path => ":rails_root/public/system/:class/:attachement/:id/:basename_:style.:extension",
                     :url => "/system/:class/:attachement/:id/:basename_:style.:extension",
+                    :default_url => "missing_thumb.png",
                     :styles => {
-                        :thumb    => ['100x100#',  :jpg, :quality => 70],
-                        :preview  => ['480x480#',  :jpg, :quality => 70],
-                        :large    => ['600>',      :jpg, :quality => 70],
-                        :retina   => ['1200>',     :jpg, :quality => 30]
+                        :thumb    => ['100x100#',  :png, :quality => 70],
+                        :preview  => ['480x480#',  :png, :quality => 70],
+                        :large    => ['600>',      :png, :quality => 70],
+                        :retina   => ['1200>',     :png, :quality => 30]
                     },
                     :convert_options => {
                         :thumb    => '-set colorspace sRGB -strip',
