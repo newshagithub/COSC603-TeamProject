@@ -5,7 +5,10 @@
 
 <h3>Lesson: <%= @lesson_id %>:</h3>
 <h4><%= model_class.human_attribute_name(:progress) %>:
-  <%= @progress %>&#37;</h4>
+  <div class="progress progress-striped">
+     <div class="progress-bar progress-bar-success" style="width: <%= @progress %>%"><%= @progress %>%</div>
+  </div>
+</h4>
 
 <br>
 

@@ -47,12 +47,13 @@
 
     <% @courses.each do |course|%>
         <div class = "panel-body">
-          <li style="font-size: large"><%=  course.name %> <%= link_to "Start", {controller: "lessons", action: "view_lessons", course_id: course.id, lesson_id: 1, lecture_id: 1}, { :class => "btn btn-xs btn-default"} %></li>
+          <p style="font-size: large"><%=  course.name %> <%= link_to "Start", {controller: "lessons", action: "view_lessons", course_id: course.id, lesson_id: 1, lecture_id: 1}, { :class => "btn btn-xs btn-default"} %></p>
         </div>
+      <br>
     <% end %>
 
 </div>
-
+<%if false%>
 <br>
 <br>
 <br>
@@ -66,6 +67,7 @@
       <% end %>
     </ul>
   </div>
+<%end%>
 <br>
 <br>
 <br>

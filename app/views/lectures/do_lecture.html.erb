@@ -15,7 +15,7 @@
 
 <dl class="dl-horizontal">
   <dt><h4><strong>Lesson: </strong></h4></dt>
-  <dd><h4><%=@lecture.name %></strong></h4></dd>
+  <dd><h4><strong><%= @lesson.name %> - <%=@lecture.name %></strong></h4></dd>
   <dt><strong><%= model_class.human_attribute_name(:reading) %>:</strong></dt>
   <dd><%= @lecture.reading.html_safe %></dd>
 </dl>
