@@ -51,14 +51,14 @@
         </button>
         <a class="navbar-brand" href= <%= main_index_path%> >Finding Black Holes For Dummies</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse"; style="text-align: bottom">
-          <ul class="nav navbar-nav"; width="100%"; style="float: right">
+          <ul class="nav navbar-nav"; width="100%"; style="float: right;">
             <% if user_signed_in? %>
                 <li><%= image_tag current_user.avatar.url(:thumb), :size => '50x50' %></li>
                 <li><%= link_to 'Welcome ' + current_user.first_name + ' ' + current_user.last_name, users_overview_path %></li>
-               <li> <%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-info' %></li>
+               <li> <%= link_to 'Logout', destroy_user_session_path, :method => :delete, :style => 'padding:5px;', :class => 'btn btn-info' %></li>
             <% else %>
                 <li><%= link_to "You are not signed in.", '#' %></li>
-            <li><%= link_to "Login", new_user_session_path, :class => 'btn btn-xs btn-danger', :id => 'loginbutton', :onclick => 'hidelink()'%> </li>
+            <li><%= link_to "Login", new_user_session_path, :class => 'btn btn-xs btn-danger', :style => 'padding:5px;', :id => 'loginbutton', :onclick => 'hidelink()'%> </li>
             <% end %>
           </ul>
         </div>

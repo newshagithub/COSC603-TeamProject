@@ -5,11 +5,50 @@ class UsersController < ApplicationController
 
   def overview
     #@current_user ||= User.find(session[:user_id])
+    # if the user navigates to this page by exiting the quiz, save the progress
+    if !params[:save].nil?
+      self.saveProgress(params)
+    end
 
     @courses=Course.all
 
-    if !params[:save].nil?
-       self.saveProgress(params)
+    # set up arrays for length of the progress bars for the quizzes
+    @number_of_courses = Course.last.id.to_i
+    @progress = Array.new(@number_of_courses).fill(0)
+    #prepare lesson and lecture id used in the view
+    @lesson_id = Array.new(@number_of_courses).fill(1)
+    @lecture_id = Array.new(@number_of_courses)
+
+    (0..@number_of_courses-1).each do |i|
+      @lecture_id[i] = Lecture.where(course_id: i+1).first.id
+    end
+
+    #name of the links to the quizzes: either "Start" or "Resume"
+    @link_name = Array.new(@number_of_courses).fill("Start")
+
+    #count number of badges for the user
+    @number_of_badges = 0
+
+    # caluclate length of progress bars, and set the lesson id, lecture id and number of badges if necessary
+    (0..@number_of_courses-1).each do |i|
+     last_lecture = Progress.find_by_user_id_and_course_id(current_user,i+1)
+      if !last_lecture.nil?
+        number_of_lectures = Lecture.where(course_id: i+1).count.to_f
+        first_lecture_in_course = Lecture.where(course_id: i+1).first.id.to_f
+
+        @progress[i] = 100.* (last_lecture.lecture_id.to_f - first_lecture_in_course +1)/number_of_lectures
+        if @progress[i] < 100
+          @link_name[i] = "Resume"
+        end
+
+        @lesson_id[i] = last_lecture.lesson_id
+        @lecture_id[i] = last_lecture.lecture_id
+
+        #update number of badges
+        if last_lecture.lesson_id > 1
+          @number_of_badges = @number_of_badges + last_lecture.lesson_id.to_i - 1
+        end
+      end
     end
 
   end

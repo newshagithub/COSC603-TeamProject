@@ -40,7 +40,7 @@ Lecture.create!([{name: %{Introduction},
 <p>Stellar black holes are made when the center of a very big star falls in upon itself, or collapses. When this happens, it causes a supernova. A supernova is an exploding star that blasts part of the star into space.</p>
 <p>Scientists think supermassive black holes were made at the same time as the galaxy they are in.</p>},
                             quizQuestions: %{When were supermassive black holes made?},
-                            quizAnswers: %{At the same time as the galaxy they are in},
+                            quizAnswers: %{At_the_same_time_as_the_galaxy_they_are_in},
                             quizOptions: %{About 1 Billion years after the galaxy was formed-At the same time as the galaxy they are in-Before the galaxy was formed},
                             lesson_id: 1,
                             course_id: 1},
@@ -48,7 +48,7 @@ Lecture.create!([{name: %{Introduction},
                             reading: %{<p>a.	A black hole can not be seen because strong gravity pulls all of the light into the middle of the black hole. But scientists can see how the strong gravity affects the stars and gas around the black hole. Scientists can study stars to find out if they are flying around, or orbiting, a black hole.</p>
 <p>When a black hole and a star are close together, high-energy light is made. This kind of light can not be seen with human eyes. Scientists use satellites and telescopes in space to see the high-energy light.</p>},
                             quizQuestions: %{Can you see a black hole in a telescope?},
-                            quizAnswers: %{We can only observe the effects of the black hole on the light emitting matter around it},
+                            quizAnswers: %{We_can_only_observe_the_effects_of_the_black_hole_on_the_light_emitting_matter_around_it},
                             quizOptions: %{Yes-We can only observe the effects of the black hole on the light emitting matter around it-Black holes appear as a dark circle in the center of a bright galaxy},
                             lesson_id: 1,
                             course_id: 1},
@@ -57,8 +57,8 @@ Lecture.create!([{name: %{Introduction},
 <p>Even if a black hole the same mass as the sun were to take the place of the sun, Earth still would not fall in. The black hole would have the same gravity as the sun. Earth and the other planets would orbit the black hole as they orbit the sun now.</p>
 <p>The sun will never turn into a black hole. The sun is not a big enough star to make a black hole</p>},
                             quizQuestions: %{Could a black hole destroy Earth?},
-                            quizAnswers: %{No, black holes do not run around gobbling up planets.},
-                            quizOptions: %{Sure-Only black holes with a mass of more than 10 solar masses-No, black holes do not run around gobbling up planets.},
+                            quizAnswers: %{No__black_holes_do_not_run_around_gobbling_up_planets},
+                            quizOptions: %{Sure-Only black holes with a mass of more than 10 solar masses-No, black holes do not run around gobbling up planets},
                             lesson_id: 1,
                             course_id: 1}])
 # course 2 / lesson 1

@@ -1,18 +1,39 @@
 
 <h2><%= current_user.first_name %>'s profile:</h2>
-<p><%= image_tag current_user.avatar.url(:thumb) %></p>
+<table>
+  <tr>
+  <td ><p><%= image_tag current_user.avatar.url(:thumb) %></p></td><td><%= current_user.first_name %><br>
+    <%= current_user.last_name %></td>
+  </tr>
+</table>
+
 
 <br>
 <br>
 <br>
 
-<div class="jumbotron">
-  <h3>My Quizzes</h3>
 
+<h4>Number of badges earned: <%= @number_of_badges%></h4>
+
+<div class="panel panel-default" style="padding: 10px">
+  <div class="panel-heading" style="font-size: x-large">My Quizzes</div>
+  <br>
   <ul>
-    <% @courses.each do |course|%>
-        <li style="font-size: large"><%= course.name %> &nbsp;&nbsp;&nbsp;<%= link_to "Start", {controller: "courses", action: "do_course", course_id: course.id, lesson_id: 1, lecture_id: 1}, {:class => "btn btn-xs btn-default"} %></li>
-        <br>
+    <% (0..@number_of_courses-1).each do |i|%>
+
+        <div>
+            <p style="font-size: large"><%= Course.find(i+1).name %> &nbsp;&nbsp;&nbsp;<%= link_to @link_name[i], {controller: "courses", action: "do_course", course_id: i+1, lesson_id: @lesson_id[i], lecture_id: @lecture_id[i]}, {:class => "btn btn-xs btn-default"} %></p>
+        </div>
+
+      <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+             aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<%= @progress[i] %>%">
+          <%= sprintf('%.1f', @progress[i])%>% Complete
+        </div>
+
+      </div>
+      <br>
+      <br>
     <% end %>
   </ul>
 </div>
@@ -21,7 +42,7 @@
 <br>
 <br>
 
-<div class="panel panel-default">
+<div class="panel panel-default" style="padding: 10px">
   <div class="panel-heading" style="font-size: x-large">Course Readings</div>
 
     <% @courses.each do |course|%>

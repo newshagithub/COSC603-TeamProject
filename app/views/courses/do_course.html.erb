@@ -3,16 +3,13 @@
   <h1><%=@course.name %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong>Lesson: <%= @lesson_id %>:</strong></dt>
-  <dd></dd>
-</dl>
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:progress) %>:</strong></dt>
-  <dd><%= @progress %>&#37;</dd>
-</dl>
+<h3>Lesson: <%= @lesson_id %>:</h3>
+<h4><%= model_class.human_attribute_name(:progress) %>:
+  <%= @progress %>&#37;</h4>
 
 <br>
+
+<div class="jumbotron">
 
 <h4>Quiz for Lesson "<%= @lesson.name %>" - <%= @lecture.name %></h4>
 
@@ -41,23 +38,31 @@
   <p><%=@lecture.reading %></p>
 </div>
 
-<br>
-<br>
+</div>
 <br>
 
-<%= link_to 'Exit', {controller: 'users', action: 'overview', user_id: current_user,
-                     course_id: @course_id, lesson_id: @lesson_id, lecture_id: @lecture_id},
-            :class => 'btn btn-default' %>
+<table>
+  <tr>
+    <td>
+<%= button_to 'Exit', {controller: 'users', action: 'overview'}, :params => {user_id: current_user,
+                     course_id: @course_id, lesson_id: @lesson_id, lecture_id: @lecture_id, save: 'true'}, :method => 'get',
+            :class => 'btn btn-secondary' %>
+    </td>
 
+<td>
 <%if @course_over %>
-    <%= link_to 'Next', {controller: 'users', action: 'overview', user_id: current_user,
-                         course_id: @course_id, lesson_id: @lesson_id, lecture_id: @lecture_id},
-                :onclick => 'alert("Congratulations! You have finished this quiz")',  :class => 'btn btn-default' %>
+    <%= button_to 'Next', {controller: 'users', action: 'overview'}, :params => @params, :method => 'get',
+                :onclick => 'alert("Congratulations! You have finished this quiz!")',  :class => 'btn btn-default', :disabled=> true, :id=> "next" %>
 <%elsif @lesson_over %>
-    <%= link_to 'Next', @next, :onclick => 'alert("You have finished this lesson!")',  :class => 'btn btn-default' %>
-<%else %>
-    <%= link_to 'Next', @next, :class => 'btn btn-default' %>
+    <%= button_to 'Next', {controller: 'courses', action: 'do_course'},  :onclick => 'alert("You have finished this lesson! You have earned a badge!")',
+                  :method => 'get', :class => 'btn btn-default', :disabled=> true, :id=> "next", :params => @params %>
+<% else %>
+    <%= button_to 'Next', {controller: 'courses', action: 'do_course'}, :method => 'get', :class => 'btn btn-default', :disabled=> true, :id=> "next", :params => @params %>
 <% end %>
+</td>
+  </tr>
+</table>
+
 
 
 <script type="text/javascript">
@@ -78,6 +83,7 @@
 
     if (document.getElementById(correct_answer).checked == true) {
       alert("Good job!");
+      document.getElementById("next").disabled = false;
     } else {
       alert("Try again!");
     }
