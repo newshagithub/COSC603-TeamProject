@@ -12,7 +12,7 @@ User.create!(first_name: "Homer", last_name: "Simpson", email: "homer@email.com"
 
 # course 1 / lesson 1
 Course.create!(name: %{Black Holes})
-Lesson.create!(name: %{What is a Black Hole?}, course_id: 1)
+Lesson.create!(name: %{What is a Black Hole?}, course_id: 1, lesson_id_fix: 1)
 Lecture.create!([{name: %{Introduction},
                             reading:
                                 %{<p>
@@ -25,6 +25,7 @@ Lecture.create!([{name: %{Introduction},
                             quizAnswers: %{No},
                             quizOptions: %{No-Yes-Only in small black holes},
                             lesson_id: 1,
+                            lesson_id_fix: 1,
                             course_id: 1},
                            {name: %{How Big Are Black Holes?},
                             reading: %{<p>Black holes can be big or small. Scientists think the smallest black holes are as small as just one atom. These black holes are very tiny but have the mass of a large mountain. Mass is the amount of matter, or stuff, in an object.</p>
@@ -34,6 +35,7 @@ Lecture.create!([{name: %{Introduction},
                             quizAnswers: %{Yes},
                             quizOptions: %{Yes-Stars always have more mass than black holes-Black holes always have more mass than stars},
                             lesson_id: 1,
+                            lesson_id_fix: 1,
                             course_id: 1},
                            {name: %{How Do Black Holes Form?},
                             reading: %{<p>Scientists think the smallest black holes formed when the universe began.</p>
@@ -43,6 +45,7 @@ Lecture.create!([{name: %{Introduction},
                             quizAnswers: %{At_the_same_time_as_the_galaxy_they_are_in},
                             quizOptions: %{About 1 Billion years after the galaxy was formed-At the same time as the galaxy they are in-Before the galaxy was formed},
                             lesson_id: 1,
+                            lesson_id_fix: 1,
                             course_id: 1},
                            {name: %{How Do Scientists Know Black holes exist if they are black},
                             reading: %{<p>a.	A black hole can not be seen because strong gravity pulls all of the light into the middle of the black hole. But scientists can see how the strong gravity affects the stars and gas around the black hole. Scientists can study stars to find out if they are flying around, or orbiting, a black hole.</p>
@@ -51,6 +54,7 @@ Lecture.create!([{name: %{Introduction},
                             quizAnswers: %{We_can_only_observe_the_effects_of_the_black_hole_on_the_light_emitting_matter_around_it},
                             quizOptions: %{Yes-We can only observe the effects of the black hole on the light emitting matter around it-Black holes appear as a dark circle in the center of a bright galaxy},
                             lesson_id: 1,
+                            lesson_id_fix: 1,
                             course_id: 1},
                            {name: %{Black Holes and Us},
                             reading: %{<p>Black holes do not go around in space eating stars, moons and planets. Earth will not fall into a black hole because no black hole is close enough to the solar system for Earth to do that.</p>
@@ -60,10 +64,11 @@ Lecture.create!([{name: %{Introduction},
                             quizAnswers: %{No__black_holes_do_not_run_around_gobbling_up_planets},
                             quizOptions: %{Sure-Only black holes with a mass of more than 10 solar masses-No, black holes do not run around gobbling up planets},
                             lesson_id: 1,
+                            lesson_id_fix: 1,
                             course_id: 1}])
 # course 2 / lesson 1
 Course.create!(name: %{History & Research on Balck Holes})
-Lesson.create!(name: %{History of Black Holes}, course_id: 2)
+Lesson.create!(name: %{History of Black Holes}, course_id: 2, lesson_id_fix: 1)
 Lecture.create!([{name: %{John Mitchell},
                   reading:%{<p> In 1783, an English geologist named John Mitchell wrote that it might be possible for something to be so big and heavy that the escape speed from its gravity is equal to the speed of light. <p>
 <p>For a small thing, like a rocket, to escape from a larger thing, like Earth, it has to escape the pull of our gravity or it will fall back. The speed that it must travel upward to get away from Earth's gravity is called escape velocity.</p>
@@ -73,6 +78,7 @@ Lecture.create!([{name: %{John Mitchell},
                   quizAnswers: %{Yes},
                   quizOptions: %{Only part time-Yes-He was an astronomist},
                   lesson_id: 1,
+                  lesson_id_fix: 1,
                   course_id: 2},
                  {name: %{Pierre-Simon Laplace},
                   reading: %{<p> Some scientists thought Mitchell might be right, but others thought that light had no mass and would not be pulled by gravity. His theory was forgotten.</p>
@@ -81,6 +87,7 @@ Lecture.create!([{name: %{John Mitchell},
                   quizAnswers: %{Yes},
                   quizOptions: %{Yes-At first, but he changed his mind after Galileo discovered Jupiters's moons-He was conflicted about the idea},
                   lesson_id: 1,
+                  lesson_id_fix: 1,
                   course_id: 2},
                  {name: %{Albert Einstein},
                   reading: %{<p> In 1916 Albert Einstein wrote an explanation of gravity called general relativity. It is a very complicated theory, but there are two important things about it:</p>
@@ -92,10 +99,11 @@ Lecture.create!([{name: %{John Mitchell},
                   quizAnswers: %{Yes},
                   quizOptions: %{Only the special relativity theory-There is still no theoretical proof that black holes can exist-Yes},
                   lesson_id: 1,
+                  lesson_id_fix: 1,
                   course_id:2}])
 
 # course 2 / lesson 2
-Lesson.create!(name: %{Research on Black Holes}, course_id: 2)
+Lesson.create!(name: %{Research on Black Holes}, course_id: 2, lesson_id_fix: 2)
 Lecture.create!([{name: %{Introduction},
                   reading:%{<p> Research on weird, invisible objects called black holes might help explain how the universe began.</p>
 <p>If you were to jump into a black hole (something that no one has yet figured out how to do), you'd be stretched from head to toe and squeezed from side to side into a long string of human spaghetti. Finally, you'd get pulverized into the tiniest bits imaginable.</p>},
@@ -103,6 +111,7 @@ Lecture.create!([{name: %{Introduction},
                   quizAnswers: %{Yes},
                   quizOptions: %{Yes-No-Nothing can exist close to a black hole},
                   lesson_id: 2,
+                  lesson_id_fix: 2,
                   course_id: 2},
                  {name: %{Black Holes and Gravity},
                   reading: %{<p> The more mass an object has, the more gravity it has. So, black holes have a lot of gravity. Black holes formed in a supernova may be only a few times the mass of our sun. On the other hand, black holes at the centers of galaxies may have a billion times as much mass as the sun, all crammed into a very small space.</p>
@@ -111,6 +120,7 @@ Lecture.create!([{name: %{Introduction},
                   quizAnswers: %{No},
                   quizOptions: %{No-Only for black holes that have masses comparable to Earth-Scientists are not sure},
                   lesson_id: 2,
+                  lesson_id_fix: 2,
                   course_id: 2},
                  {name: %{How do scientists study black holes?},
                   reading: %{<p> Because black holes are so weird (not to mention invisible), they can be difficult to study.</p>
@@ -119,11 +129,12 @@ Lecture.create!([{name: %{Introduction},
                   quizAnswers: %{Yes},
                   quizOptions: %{Yes, but scientists need very good eyesight to see the black holes in the telescopes-Yes, but they have to be "Black Space Telescopes"-Yes},
                   lesson_id: 2,
+                  lesson_id_fix: 2,
                   course_id: 2}])
 
 # course 3 / lesson 1
 Course.create!(name: %{Advanced Topics on Black Holes})
-Lesson.create!(name: %{ Effect on light }, course_id: 3)
+Lesson.create!(name: %{ Effect on light }, course_id: 3, lesson_id_fix: 1)
 Lecture.create!([{name: %{Singularity},
                   reading:%{<p> At the middle of a black hole, there is a gravitational center called a singularity. It is impossible to see it because the gravity prevents any light escaping. Around the tiny singularity, there is a large area where light which would normally pass by gets sucked in as well.<p>
 <p> The edge of this area is called the event horizon. The gravity of the black hole gets weaker at a distance. The event horizon is the place farthest away from the middle where the gravity is still strong enough to trap light.</p>},
@@ -131,6 +142,7 @@ Lecture.create!([{name: %{Singularity},
                   quizAnswers: %{No},
                   quizOptions: %{Yes-No-Maybe},
                   lesson_id: 1,
+                  lesson_id_fix: 1,
                   course_id: 3},
                  {name: %{Accretion Disk },
                   reading: %{<p> Outside the event horizon, light and matter will still be pulled toward the black hole. If a black hole is surrounded by matter, the matter will form an "accretion disk" (accretion means "gathering") around the black hole. </p>
@@ -139,6 +151,7 @@ Lecture.create!([{name: %{Singularity},
                   quizAnswers: %{Yes},
                   quizOptions: %{For most black holes, but the distance of the disk from the black hole can be up to 5 light years-The disk is located over the north pole of the black hole-Yes},
                   lesson_id: 1,
+                  lesson_id_fix: 1,
                   course_id: 3},
                  {name: %{Gravitational Lensingng},
                   reading: %{<p> Since we cannot see black holes, they must be detected by other means. When a black hole passes between us and a source of light, the light bends around the black hole creating a mirror image. That effect is called gravitational lensing.</p>},
@@ -146,16 +159,18 @@ Lecture.create!([{name: %{Singularity},
                   quizAnswers: %{Yes},
                   quizOptions: %{The reason is Electrostatic Lensing-The reason is Gravytational Lensing-Yes},
                   lesson_id: 1,
+                  lesson_id_fix: 1,
                   course_id: 3}])
 
 # course 3 / lesson 2
-Lesson.create!(name: %{Hawking Radiation}, course_id: 3)
+Lesson.create!(name: %{Hawking Radiation}, course_id: 3, lesson_id_fix: 2)
 Lecture.create!([{name: %{Introduction},
                   reading:%{<p> In 1974, Hawking predicted that black holes are not entirely black but emit small amounts of thermal radiation; this effect has become known as Hawking radiation. By applying quantum field theory to a static black hole background, he determined that a black hole should emit particles in a perfect black body spectrum.</p>},
                   quizQuestions: %{Do black holes give off radiation?},
                   quizAnswers: %{Yes},
                   quizOptions: %{Yes-They can emit particles, not radiation-No},
                   lesson_id: 2,
+                  lesson_id_fix: 2,
                   course_id: 3},
                  {name: %{ Black Hole Evaporation },
                   reading: %{<p> Hawking radiation reduces the mass and the energy of the black hole and is therefore also known as black hole evaporation. Because of this, black holes that lose more mass than they gain through other means are expected to shrink and ultimately vanish. Micro black holes (MBHs) are predicted to be larger net emitters of radiation than larger black holes and should shrink and dissipate faster.</p>},
@@ -163,6 +178,7 @@ Lecture.create!([{name: %{Introduction},
                   quizAnswers: %{Yes},
                   quizOptions: %{No, they just acquire more mass over time-Scientists do not know-Yes},
                   lesson_id: 2,
+                  lesson_id_fix: 2,
                   course_id: 3},
                  {name: %{Puzzles},
                   reading: %{<p> There are many puzzles concerning black holes and Hawking radiation; for example, black hole evaporation via Hawking radiation seems to mean information is lost forever. The root cause of these puzzles is that quantum mechanics and General Relativity – the two most successful theories in physics, period – are incompatible, and we have no experiments or observations to help us work out how to resolve this incompatibility.</p>},
@@ -170,5 +186,6 @@ Lecture.create!([{name: %{Introduction},
                   quizAnswers: %{No},
                   quizOptions: %{No-Yes, except for general relativity-Yes, but we lack mathematical concepts to understand the theories},
                   lesson_id: 2,
+                  lesson_id_fix: 2,
                   course_id: 3}])
 

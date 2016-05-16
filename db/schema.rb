@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506222502) do
+ActiveRecord::Schema.define(version: 20160516213759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160506222502) do
     t.datetime "updated_at",    null: false
     t.string   "quizOptions"
     t.integer  "course_id"
+    t.integer  "lesson_id_fix"
   end
 
   add_index "lectures", ["course_id"], name: "index_lectures_on_course_id", using: :btree
@@ -41,11 +42,26 @@ ActiveRecord::Schema.define(version: 20160506222502) do
   create_table "lessons", force: :cascade do |t|
     t.string   "name"
     t.integer  "course_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "lesson_id_fix"
+  end
+
+  add_index "lessons", ["course_id"], name: "index_lessons_on_course_id", using: :btree
+
+  create_table "progresses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.integer  "lesson_id"
+    t.integer  "lecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "lessons", ["course_id"], name: "index_lessons_on_course_id", using: :btree
+  add_index "progresses", ["course_id"], name: "index_progresses_on_course_id", using: :btree
+  add_index "progresses", ["lecture_id"], name: "index_progresses_on_lecture_id", using: :btree
+  add_index "progresses", ["lesson_id"], name: "index_progresses_on_lesson_id", using: :btree
+  add_index "progresses", ["user_id"], name: "index_progresses_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -73,24 +89,9 @@ ActiveRecord::Schema.define(version: 20160506222502) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "lectures", "courses"
   add_foreign_key "lectures", "lessons"
   add_foreign_key "lessons", "courses"
-
-  #added this because progress table disappeared
-  create_table "progresses", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer  "course_id"
-    t.integer  "lesson_id"
-    t.integer  "lecture_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-  add_index "progresses", ["user_id"], name: "index_progresses_on_user_id", using: :btree
-  add_index "progresses", ["course_id"], name: "index_progresses_on_course_id", using: :btree
-  add_index "progresses", ["lesson_id"], name: "index_progresses_on_lesson_id", using: :btree
-  add_index "progresses", ["lecture_id"], name: "index_progresses_on_lecture_id", using: :btree
-
-  add_foreign_key "lectures", "courses"
   add_foreign_key "progresses", "courses"
   add_foreign_key "progresses", "lectures"
   add_foreign_key "progresses", "lessons"

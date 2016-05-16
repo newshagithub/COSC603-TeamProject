@@ -5,17 +5,26 @@ class LecturesController < ApplicationController
   # GET /lectures Student View
   def do_lecture
     #set the parameters
-    @course = Course.find_by_id(params[:course_id])
-    @lesson = Lesson.find_by_id(params[:id])
-    @lectures = Lecture.find_by_course_id(params[:course_id])
     @course_id = params[:course_id]
-    @lesson_id = params[:id]
+    @lesson_id = params[:lesson_id]
     @lecture_id = params[:lecture_id]
+
+
+    @course = Course.find_by_id(params[:course_id])
+    @lesson = Lesson.find_by_id(params[:lesson_id])
+
+    @fixed_lesson_id = @lesson.lesson_id_fix.to_s
+
+    puts @fixed_lesson_id.to_s
+
+    @lectures = Lecture.find_by_course_id(params[:course_id])
+
 
     #for progress bar
     @counter = params[:counter].to_i
-    @totalLectures = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).count
-
+    #@totalLectures = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).count
+    #this is a bandaid for an error in creating the seed file
+    @totalLectures = Lecture.where(course_id: @course_id, lesson_id: @fixed_lesson_id).count
     #@lecture_id = params[:lecture_id]
     #@lesson = Lesson.where(course_id: params[:course_id]).first
     # @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).select(:id)
@@ -29,20 +38,22 @@ class LecturesController < ApplicationController
 
     #set lecture to be shown
     if(@lecture_id == nil) #first lecture
-      @lecture = Lecture.where(course_id: @course_id, lesson_id: @lesson_id).first
+      @lecture = Lecture.where(course_id: @course_id, lesson_id: @fixed_lesson_id).first
       @counter = 0
-    elsif(Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id).blank?) #last lecture
+    #elsif(Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id).blank?) #last lecture
+    elsif(Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @fixed_lesson_id).blank?) #last lecture
       flash[:notice] = 'Lesson: '+@lesson.name+' was successfully read, please take the quiz to test your knowledge.'
       redirect_to :controller=> 'users', :action => 'overview'
       return
     else #middle lecture
       @counter += 1
-      @lecture = Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id)
+      #@lecture = Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @lesson_id)
+      @lecture = Lecture.find_by_id_and_course_id_and_lesson_id(@lecture_id, @course_id, @fixed_lesson_id)
     end
 
     #set quizzes once right lecture found
-    @answer = @lecture.quizAnswers
-    @options = @lecture.quizOptions.split("-")
+    #@answer = @lecture.quizAnswers
+    #@options = @lecture.quizOptions.split("-")
   end
 
   def grade_lecture
@@ -75,7 +86,10 @@ class LecturesController < ApplicationController
   def view_lectures
     @course_id = params[:course_id]
     @lesson_id = params[:id]
+
     @lesson = Lesson.find(@lesson_id)
+    @fixed_lesson_id = @lesson.lesson_id_fix
+    puts "lession fix: "+@fixed_lesson_id
     @lectures = Lecture.where(lesson_id: @lesson_id, course_id: @course_id)
   end
 

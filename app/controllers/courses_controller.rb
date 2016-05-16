@@ -19,6 +19,7 @@ class CoursesController < ApplicationController
     first_id_in_lesson = Lecture.select(:id).where(course_id: @course_id, lesson_id: @lesson_id).first
     last_id_in_lesson = Lecture.select(:id).where(course_id: @course_id, lesson_id: @lesson_id).last
 
+
     # this is the id of the current lecture
     #@lecture_id = first_id_in_lesson.id.to_i + params[:lecture_id].to_i - 1
     @lecture_id = params[:lecture_id].to_i

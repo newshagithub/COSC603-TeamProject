@@ -15,88 +15,16 @@
 
 <dl class="dl-horizontal">
   <dt><h4><strong>Lesson: </strong></h4></dt>
-  <dd><h4><strong><%= @lesson.name %> - <%=@lecture.name %></strong></h4></dd>
+  <dd><h4><%=@lecture.name %></strong></h4></dd>
   <dt><strong><%= model_class.human_attribute_name(:reading) %>:</strong></dt>
   <dd><%= @lecture.reading.html_safe %></dd>
 </dl>
-
-
 <br>
-<%if false%>
-<h4>Quiz for Lesson "<%= @lesson.name %>" - <%= @lecture.name %></h4>
 
-<br>
-<div>
-
-  <label><%=@lecture.quizQuestions %></label>
-</div>
-
-
-  <% @options.each do |option| %>
-    <%if false%>
-    <div class = "radio_button">
-      <label><input type="radio" name = "radio_button", value="option" > <%= option %></label>
-    </div>
-        <%end%>
-
-    <%= link_to option, {controller: "lectures", action: "grade_lecture", course_id: @course.id, id: @lesson.id,
-                                lecture_id: @lecture.id, counter: @counter, option: option}, :class => 'btn btn-default' %>
-    <br>
-    <br>
-
-
-<%end%>
-<%end%>
-
-<%if false%>
-<a href="javascript:hideshow(document.getElementById('reading') )">Need a hint?</a><br>
-<a href="javascript:checkAnswer()" class="btn btn-primary">Check your answer!</a>
-
-
-<div id="correctAnswer", style="display:none">
-  <p>Great Job!</p>
-</div>
-
-<div id="wrongAnswer", style="display:none">
-  <p>Try again!</p>
-</div>
-
-<div id="reading", style="display:none">
-  <p><%=@lecture.reading.html_safe %></p>
-</div>
-<%end%>
-
-<br>
-<br>
-<br>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
             :back, :class => 'btn btn-default'  %>
-<%= link_to 'Next', {controller: "lectures", action: "do_lecture", course_id: @course.id, id: @lesson.id,
+<%= link_to 'Next', {controller: "lectures", action: "do_lecture", course_id: @course.id, lesson_id: @lesson.id,
                      lecture_id: @lecture.id, counter: @counter}, :class => 'btn btn-default' %>
-<%if false%>
-<%= link_to 'Next Answer', {controller: "lectures", action: "grade_lecture", course_id: @course.id, id: @lesson.id,
-                            lecture_id: @lecture.id, counter: @counter}, :submit => @answer, :class => 'btn btn-default' %>
-    <%end%>
 
-<script type="text/javascript">
-  function hideshow(which){
-    if (!document.getElementById)
-      return
-    if (which.style.display=="block")
-      which.style.display="none"
-    else
-      which.style.display="block"
-  }
-</script>
 
-<script type="text/javascript">
-  function checkAnswer() {
-
-    if (document.getElementById("option_Yes").checked == true) {
-      alert("Good job!");
-    } else {
-      alert("Try again!");
-    }
-  }
-</script>
