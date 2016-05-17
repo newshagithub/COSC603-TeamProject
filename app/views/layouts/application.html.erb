@@ -50,15 +50,15 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href= <%= main_index_path%> >Finding Black Holes For Dummies</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse"; style="text-align: bottom">
+        <div class="navbar-collapse collapse navbar-responsive-collapse"; style="text-align: justify">
           <ul class="nav navbar-nav"; width="100%"; style="float: right;">
             <% if user_signed_in? %>
-                <li><%= image_tag current_user.avatar.url(:thumb), :size => '50x50' %></li>
+                <li><%= image_tag current_user.avatar.url(:thumb), :size => '50x50', :style => 'margin: 9px;' %></li>
                 <li><%= link_to 'Welcome ' + current_user.email, users_overview_path %></li>
-               <li> <%= link_to 'Logout', destroy_user_session_path, :method => :delete, :style => 'padding:5px;', :class => 'btn btn-info' %></li>
+                <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :style => 'margin: 13px; padding:7px', :class => 'btn btn-s btn-info' %></li>
             <% else %>
                 <li><%= link_to "You are not signed in.", '#' %></li>
-            <li><%= link_to "Login", new_user_session_path, :class => 'btn btn-xs btn-danger', :style => 'padding:5px;', :id => 'loginbutton', :onclick => 'hidelink()'%> </li>
+                <li><%= link_to "Login", new_user_session_path, :class => 'btn btn-s btn-danger', :style => 'margin: 13px; padding:7px', :id => 'loginbutton', :onclick => 'hidelink()'%> </li>
             <% end %>
           </ul>
         </div>
